@@ -1,0 +1,94 @@
+/* CSS styles for register page */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: -9px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3E92CC;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2974A9;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+p a {
+    color: #3E92CC;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* İstediğiniz boşluğa göre ayarlayabilirsiniz */
+  }
+  
+  .logo-container img {
+    width: 100px; /* Veya istediğiniz boyuta göre ayarlayabilirsiniz */
+  }
+  
+  .logo-container span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px; /* Logo ile marka arasındaki boşluğu ayarlayabilirsiniz */
+  }
+  

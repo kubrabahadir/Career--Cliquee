@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Logo" />
+        <h2>Career Cliquee</h2>
+      </div>
+
+      <form action="">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" id="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+    <!-- Firebase Authentication SDK -->
+ 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        import {
+          getDatabase,
+          ref,
+          set,
+        } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+        import {
+          getAuth,
+          signInWithEmailAndPassword ,
+        } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+  
+        const firebaseConfig = {
+          apiKey: "AIzaSyDbRHsscoIn_MHz3q9dS3St-MynPWbw6ls",
+          authDomain: "thesis-career-cliquee.firebaseapp.com",
+          projectId: "thesis-career-cliquee",
+          storageBucket: "thesis-career-cliquee.appspot.com",
+          messagingSenderId: "605410191328",
+          appId: "1:605410191328:web:c23aa6801ff94182e76d85",
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        // Firebase Authentication
+        const auth = getAuth(app);
+  
+        // Register a new user with Firebase
+  
+        document
+          .getElementById("submit")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+  
+            try {
+                signInWithEmailAndPassword (auth, email, password)
+                .then((userCredential) => {
+                 console.log("boom or no boom idk")
+                })
+                .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                });
+            } catch (error) {
+              alert(error);
+              console.log("boom from auth");
+            }
+          });
+      </script>
+
+    <!-- 
