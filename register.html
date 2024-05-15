@@ -1,146 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Login/Register</title>
-    <!-- Cool Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Our stylesheet -->
-    <link rel="stylesheet" type="text/css" href="styles/register.css" />
-  </head>
-  <body>
-    <div id="content_container" class="container">
-      <img src="images/logo.png" alt="Logo" />
-      <h2>Career Cliquee</h2>
-      <form id="register-form">
-        <div class="form-field">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" required />
-        </div>
-        <div class="form-field">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" required />
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <div class="form-field">
-          <label for="confirm-password">Confirm Password</label>
-          <input
-            type="password"
-            id="confirm-password"
-            name="confirm-password"
-            required
-          />
-        </div>
-        <div class="form-field">
-          <label for="userType">User Type</label>
-          <select id="userType" name="userType" required>
-            <option value="" disabled selected>Select User Type</option>
-            <option value="student-working">Student - Working</option>
-            <option value="student-not-working">Student - Not Working</option>
-            <option value="graduate-working">Graduate - Working</option>
-            <option value="graduate-not-working">Graduate - Not Working</option>
-          </select>
-        </div>
-        <input type="button" value="Submit" class="sub" id="submit" />
-      </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
-      <button id="company-register">Registration for Companies</button>
-    </div>
 
-    <!-- Firebase JavaScript SDK -->
-   
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-      import {
-        getDatabase,
-        ref,
-        set,
-      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+<head>
+  <meta charset="utf-8" />
+  <title>Login/Register</title>
+  <!-- Cool Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet" />
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" type="text/css" href="styles/register.css" />
+</head>
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyDbRHsscoIn_MHz3q9dS3St-MynPWbw6ls",
-        authDomain: "thesis-career-cliquee.firebaseapp.com",
-        projectId: "thesis-career-cliquee",
-        storageBucket: "thesis-career-cliquee.appspot.com",
-        messagingSenderId: "605410191328",
-        appId: "1:605410191328:web:c23aa6801ff94182e76d85",
-      };
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase(app);
-      // Firebase Authentication
-      const auth = getAuth(app);
+<body>
+  <div id="content_container" class="container">
+    <img src="images/logo.png" alt="Logo" />
+    <h2>Career Cliquee</h2>
+    <form id="register-form">
+      <div class="form-field">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required />
+      </div>
+      <div class="form-field">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required />
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="form-field">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required />
+      </div>
+      <div class="form-field">
+        <label for="userType">User Type</label>
+        <select id="userType" name="userType" required>
+          <option value="" disabled selected>Select User Type</option>
+          <option value="student-working">Student - Working</option>
+          <option value="student-not-working">Student - Not Working</option>
+          <option value="graduate-working">Graduate - Working</option>
+          <option value="graduate-not-working">Graduate - Not Working</option>
+        </select>
+      </div>
+      <input type="button" value="Submit" class="sub" id="submit" />
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+    <button id="company-register">Registration for Companies</button>
+  </div>
 
-      // Register a new user with Firebase
+</body>
 
-      document
-        .getElementById("submit")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          const password = document.getElementById("password").value;
-          const confirmPassword =
-            document.getElementById("confirm-password").value;
-          const email = document.getElementById("email").value;
-
-          // Veritabanına eklemeden önce şifreleri kontrol edelim
-          if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-          }
-          try {
-            createUserWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                console.log(userCredential.uid)
-                set(
-                  ref(
-                    db,
-                    "/users" + document.getElementById("firstName").value
-                  ),
-                  {
-                    firstName: document.getElementById("firstName").value,
-                    lastName: document.getElementById("lastName").value,
-                    email: document.getElementById("email").value,
-                    password: document.getElementById("password").value,
-                    userType: document.getElementById("userType").value,
-                  }
-                );
-              })
-              .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-              });
-          } catch (error) {
-            alert("boom");
-            console.log("boom from auth");
-          }
-        });
-    </script>
-    <!-- Our script must be loaded after Firebase references -->
-  </body>
 </html>

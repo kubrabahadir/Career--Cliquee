@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    margin-left: 400px;
+    align-items: center;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    margin-left: -300px;
+    align-items: center;
+}
+
+.logo img {
+    width: 300px;
+}
+
+
+.brand-name {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: -15px; /* Metni sola kaydır */
+}
+
+
+.box {
+    border-radius: 10px; /* Köşeleri yuvarlak yap */
+    overflow: hidden; /* İçeriklerin köşeleri dışarı taşmasını önle */
+}
+
+.image-link {
+    display: block; /* Bağlantıyı blok öğe haline getir */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    color: #FFFFFF; /* Yazı rengini beyaz yap */
+    transition: background-color 0.3s; /* Arka plan rengi değişimini yumuşak hale getir */
+}
+
+.image-link:hover {
+    background-color: #1E5F8B; /* Farenin üzerine geldiğinde arka plan rengini değiştir */
+}
+
+.image {
+    display: block; /* Resmi blok öğe haline getir */
+    width: 100%; /* Tam genişlikte olmasını sağla */
+    height: auto; /* Orantılı bir şekilde boyutlandır */
+}
+
+.label {
+    text-align: center; /* Metni ortala */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan rengi */
+    padding: 5px; /* Dolgu ekle */
+    font-size: 16px; /* Yazı boyutunu ayarla */
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.box {
+    margin: 0 10px;
+}
+
+.box:hover {
+    transform: scale(1.1); /* 10% büyütme efekti */
+}
+
+.box img {
+    width: 200px;
+    border-radius: 10px;
+}
