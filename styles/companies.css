@@ -14,7 +14,7 @@
 
 img {
     position: absolute;
-    left: calc(30% - 50px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    left: calc(30% - 320px); /* Sayfanın yarısında olacak şekilde sola kaydır */
     transform: translateX(-50%);
     top: 30px; /* Üstten boşluk bırak */
     width: 100px;
@@ -30,7 +30,7 @@ img {
 
 #profile {
     position: absolute;
-    left: calc(50% + 50px); /* Resmin sağında olacak şekilde sola kaydır */
+    left: calc(50% + 510px); /* Resmin sağında olacak şekilde sola kaydır */
     top: 60px; /* Üstten boşluk bırak */
 }
 
@@ -121,3 +121,19 @@ img {
     font-family: Arial, sans-serif; /* Font ailesi */
 }
   
+
+.logo-link {
+    display: inline-flex; 
+    align-items: left;
+    text-decoration: none; 
+  }
+  
+  .logo-link img {
+    margin-right: 8px; 
+  }
+  
+  .logo-link span {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: black; 
+  }
