@@ -52,7 +52,7 @@
 .form__field__wrapper button[type='submit'] {
   margin-top: 32px;
   cursor: pointer;
-  background-color: #3E92CC;
+  background-color: #1E5F8B;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -68,4 +68,23 @@
 .form__field__wrapper button[type='submit'] svg {
   fill: #ede0e0;
   width: 20px;
+}
+
+#avatar__selection {
+  margin-right: 10px;
+  display: flex;
+  gap: 1em;
+}
+
+.avatar__option {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid #797a79;
+}
+
+.avatar__option__selected {
+  border: 3px solid #1E5F8B;
 }

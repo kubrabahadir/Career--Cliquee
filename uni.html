@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universities</title>
+  <link rel="stylesheet" href="styles/companies.css" />
+</head>
+<body>
+  <nav>
+    <ul id="navbar">
+      <a href="home.html" class="logo-link">
+        <img src="logo.png" id="img" alt="Logo" />
+      </a>
+      <a href="home.html" id="text">
+        Career Cliquee
+      </a>
+      <li id="home"><a href="home.html">Home</a></li>
+      <li id="profile"><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+  <div class="middle">
+    <div class="box">
+      <a href="#" data-university="Beykoz">
+        <img src="images/beykoz.png" alt="Beykoz" width="150" height="150">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="bogazici">
+        <img src="images/bogazici.png" alt="Bogazici" width="200" height="200">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="itü">
+        <img src="images/itü.png" alt="ITÜ" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="koc">
+        <img src="images/koç.png" alt="Koç" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="sabanci">
+        <img src="images/sabancı.svg" alt="Sabanci" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="gebzeteknik">
+        <img src="images/gebzeteknik.png" alt="Gebze Teknik" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="odtü">
+        <img src="images/ödtü.png" alt="ODTÜ" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="ankara">
+        <img src="images/Ankara_Üniversitesi_logosu.png" alt="Ankara" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="ege">
+        <img src="images/Ege_University_logo.svg.png" alt="Ege" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="19mayis">
+        <img src="images/1200px-OMÜ_logo.svg.png" alt="19 Mayis" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="karadenizTeknik">
+        <img src="images/logo-karadeniz-teknik-universitesi.png" alt="Karadeniz Teknik" width="100" height="100">
+      </a>
+    </div>
+    <div class="box">
+      <a href="#" data-university="ataturkuni">
+        <img src="images/Ataturkuni_logo.png" alt="Atatürk Uni" width="100" height="100">
+      </a>
+    </div>
+  </div>
+  <div id="universityDetails"></div>
+  <footer>
+    <p id="copy">&copy; 2024 Career Cliquee</p>
+  </footer>
+  <script>
+    document.querySelectorAll('.box a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const universityName = link.dataset.university;
+        const encodedUniversityName = encodeURIComponent(universityName);
+        window.location.href = `university.html?name=${encodedUniversityName}`;
+      });
+    });
+  </script>
+</body>
+</html>

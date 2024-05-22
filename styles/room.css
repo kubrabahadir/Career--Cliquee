@@ -128,7 +128,7 @@
 
 .message__author__bot {
   margin-right: 10px;
-  color: #3E92CC!important;
+  color: #1E5F8B!important;
 
 }
 
@@ -207,7 +207,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border:2px solid #3E92CC;
+  border:2px solid #1E5F8B;
   border-radius: 50%;
   cursor: pointer;
   overflow: hidden;
@@ -335,11 +335,11 @@
 .stream__actions button.active,
 .stream__actions a:hover,
 .stream__actions button:hover {
-  background-color: #3E92CC;
+  background-color: #1E5F8B;
 }
 
 #join-btn{
-  background-color: #3E92CC;
+  background-color: #1E5F8B;
   font-size: 18px;
   padding: 25px 50px;
   border: none;

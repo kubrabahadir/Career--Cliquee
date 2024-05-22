@@ -1,0 +1,114 @@
+[
+  {
+    "name": "LC Waikiki",
+    "logo": "images/lcwaikiki.png",
+    "profile": "LC Waikiki, moda perakende sektöründe faaliyet gösteren bir şirkettir. Türkiye'nin önde gelen hazır giyim markalarından biridir.",
+    "internships": "LC Waikiki, her yıl yaz dönemi için staj programları düzenlemektedir. Başvurular genellikle Mart-Nisan aylarında başlar.",
+    "careerTips": "LC Waikiki'de kariyer yapmak için moda trendlerini takip etmek, müşteri odaklı olmak ve iyi bir iletişim becerisi geliştirmek önemlidir.",
+    "learningResources": "LC Waikiki, çalışanlarına moda ve perakende sektörü ile ilgili eğitimler ve seminerler sunmaktadır."
+  },
+  {
+    "name": "Huawei",
+    "logo": "images/Huawei.png",
+    "profile": "Huawei, telekomünikasyon ve teknoloji alanında faaliyet gösteren bir şirkettir. Akıllı telefonlar, ağ ekipmanları ve bulut hizmetleri sunmaktadır.",
+    "internships": "Huawei, her yıl yazılım mühendisliği, elektrik-elektronik mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Huawei'de kariyer yapmak için yazılım geliştirme becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Huawei, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "Türk Telekom",
+    "logo": "images/Türk_Telekom.png",
+    "profile": "Türk Telekom, Türkiye'nin önde gelen telekomünikasyon şirketidir. Sabit hat, mobil, internet ve TV hizmetleri sunmaktadır.",
+    "internships": "Türk Telekom, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve telekomünikasyon mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Türk Telekom'da kariyer yapmak için teknik becerilerinizi geliştirmeniz, müşteri odaklı olmanız ve iyi bir iletişim becerisi geliştirmeniz önemlidir.",
+    "learningResources": "Türk Telekom, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {    
+    "name": "Vestel",
+    "logo": "images/vestel.png",
+    "profile": "Vestel, beyaz eşya, elektronik ve teknoloji ürünleri üretimi yapan bir şirkettir. Türkiye'nin önde gelen markalarından biridir.",
+    "internships": "Vestel, her yıl makine mühendisliği, elektrik-elektronik mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Vestel'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Vestel, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "ETS",
+    "logo": "images/ets.png",
+    "profile": "ETS, bilgi teknolojileri ve yazılım hizmetleri sunan bir şirkettir. Birçok sektörde faaliyet göstermektedir.",
+    "internships": "ETS, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "ETS'de kariyer yapmak için yazılım geliştirme becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "ETS, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "Migros",
+    "logo": "images/migros-logo.png",
+    "profile": "Migros, perakende sektöründe faaliyet gösteren bir süpermarket zinciridir. Türkiye'nin önde gelen markalarından biridir.",
+    "internships": "Migros, her yıl işletme, pazarlama ve lojistik alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Migros'ta kariyer yapmak için müşteri odaklı olmak, iyi bir iletişim becerisi geliştirmek ve takım çalışmasına yatkın olmak önemlidir.",
+    "learningResources": "Migros, çalışanlarına perakende sektörü, müşteri ilişkileri ve liderlik konularında eğitimler ve seminerler sunmaktadır."
+  },
+  {
+    "name": "Sabancı",
+    "logo": "images/sabancı.png",
+    "profile": "Sabancı Holding, çok sayıda sektörde faaliyet gösteren bir şirketler grubudur. Finanstan enerjiye, sanayiden hizmetlere kadar birçok alanda yer almaktadır.",
+    "internships": "Sabancı Holding, her yıl birçok farklı sektörde staj programları düzenlemektedir.",
+    "careerTips": "Sabancı Holding'de kariyer yapmak için sektöre özel becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Sabancı Holding, çalışanlarına sektöre özel eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "Zorlu",
+    "logo": "images/Zorlu.png",
+    "profile": "Zorlu Holding, enerji, tekstil, elektronik ve gayrimenkul gibi çeşitli sektörlerde faaliyet gösteren bir şirkettir.",
+    "internships": "Zorlu Holding, her yıl enerji mühendisliği, tekstil mühendisliği ve inşaat mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Zorlu Holding'de kariyer yapmak için sektöre özel becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Zorlu Holding, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "Logo",
+    "logo": "images/Logo-.png",
+    "profile": "Logo Yazılım, yazılım çözümleri ve hizmetleri sunan bir şirkettir. Türkiye'nin önde gelen yazılım firmalarından biridir.",
+    "internships": "Logo Yazılım, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Logo Yazılım'da kariyer yapmak için yazılım geliştirme becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Logo Yazılım, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "Turkcell",
+    "logo": "images/turkcell.png",
+    "profile": "Turkcell, Türkiye'nin önde gelen mobil iletişim ve teknoloji şirketidir. Mobil hizmetler, internet ve dijital çözümler sunmaktadır.",
+    "internships": "Turkcell, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve telekomünikasyon mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Turkcell'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, müşteri odaklı olmanız ve iyi bir iletişim becerisi geliştirmeniz önemlidir.",
+    "learningResources": "Turkcell, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  },
+  {
+    "name": "LC Waikiki",
+    "logo": "images/lcwaikiki.png",
+    "profile": "LC Waikiki, moda perakende sektöründe faaliyet gösteren bir şirkettir. Türkiye'nin önde gelen hazır giyim markalarından biridir.",
+    "internships": "LC Waikiki, her yıl yaz dönemi için staj programları düzenlemektedir. Başvurular genellikle Mart-Nisan aylarında başlar.",
+    "careerTips": "LC Waikiki'de kariyer yapmak için moda trendlerini takip etmek, müşteri odaklı olmak ve iyi bir iletişim becerisi geliştirmek önemlidir.",
+    "learningResources": "LC Waikiki, çalışanlarına moda ve perakende sektörü ile ilgili eğitimler ve seminerler sunmaktadır."
+  },
+  {
+    "name": "Migros",
+    "logo": "images/migros-logo.png",
+    "profile": "Migros, perakende sektöründe faaliyet gösteren bir süpermarket zinciridir. Türkiye'nin önde gelen markalarından biridir.",
+    "internships": "Migros, her yıl işletme, pazarlama ve lojistik alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Migros'ta kariyer yapmak için müşteri odaklı olmak, iyi bir iletişim becerisi geliştirmek ve takım çalışmasına yatkın olmak önemlidir.",
+    "learningResources": "Migros, çalışanlarına perakende sektörü, müşteri ilişkileri ve liderlik konularında eğitimler ve seminerler sunmaktadır."
+  },
+  {
+    "name": "Tchibo",
+    "logo": "images/tchibo.png",
+    "profile": "Tchibo, kahve ve tüketim malları perakende sektöründe faaliyet gösteren bir şirkettir. Türkiye'de geniş bir mağaza ağına sahiptir.",
+    "internships": "Tchibo, her yıl pazarlama, işletme ve lojistik alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Tchibo'da kariyer yapmak için müşteri odaklı olmak, yenilikçi düşünmek ve iyi bir iletişim becerisi geliştirmek önemlidir.",
+    "learningResources": "Tchibo, çalışanlarına perakende sektörü, müşteri ilişkileri ve yönetim konularında eğitimler ve seminerler sunmaktadır."
+  },
+  {
+    "name": "Mercedes-Benz",
+    "logo": "images/Mercedes-Benz.png",
+    "profile": "Mercedes-Benz, otomotiv sektöründe faaliyet gösteren bir şirkettir. Lüks otomobiller, kamyonlar ve otobüsler üretmektedir.",
+    "internships": "Mercedes-Benz, her yıl makine mühendisliği, otomotiv mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
+    "careerTips": "Mercedes-Benz'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
+    "learningResources": "Mercedes-Benz, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır."
+  }
+]

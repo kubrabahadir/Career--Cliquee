@@ -77,6 +77,8 @@ img {
     grid-template-columns: repeat(4, calc(40% - 20px)); /* Her satırda 4 kutu */
     grid-gap: 50px; /* Yatayda ve dikeyde 20px boşluk */
   }
+
+
   .box {
     position: relative; /* Göreceli konumlandırma */
     width: 100%;
@@ -121,6 +123,18 @@ img {
     font-family: Arial, sans-serif; /* Font ailesi */
 }
   
+
+#text{
+    position: absolute;
+    left: calc(50% - 470px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    transform: translateX(-50%);
+    top: 70px; /* Üstten boşluk bırak */
+    color: grey;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
 
 .logo-link {
     display: inline-flex; 

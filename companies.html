@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navbar</title>
+  <title>Companies</title>
   <link rel="stylesheet" href="styles/companies.css" />
   
 </head>
@@ -12,7 +12,10 @@
     <ul id="navbar">
         <a href="home.html" class="logo-link">
             <img src="logo.png" id="img" alt="Logo" />
-            <span>Career Cliquee</span>
+        </a>
+       
+        <a href="home.html" id="text">
+          Career Cliquee
         </a>
 
       <!-- Yukarıdaki satırın düzeltilmiş hali -->
@@ -20,33 +23,88 @@
 
       <li id="home"><a href="home.html">Home</a></li>
       <li id="profile"><a href="profile.html">Profile</a></li>
+      
+      
     </ul>
   </nav>
   <div class="middle">
     <div class="box">
-        <a href="huawei.html">
+        <a href="#" data-company="Huawei">
             <img src="images/Huawei.png" alt="Huawei Logo" width="150" height="150">
         </a>
     </div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="box">
+        <a href="#" data-company="Türk Telekom">
+            <img src="images/Türk_Telekom .png" alt="Türk Telekom Logo" width="200" height="200">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Sabancı">
+            <img src="images/sabancı.png" alt="Sabancı Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Zorlu">
+            <img src="images/Zorlu.png" alt="Zorlu Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="ETS">
+            <img src="images/ets.png" alt="ETS Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Logo">
+            <img src="images/Logo-.png" alt="Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Turkcell">
+            <img src="images/turkcell.png" alt="Turkcell Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="LC Waikiki">
+            <img src="images/lcwaikiki.png" alt="LC Waikiki Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Migros">
+            <img src="images/migros-logo.png" alt="Migros Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Vestel">
+            <img src="images/vestel.png" alt="Vestel Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Tchibo">
+            <img src="images/tchibo.png" alt="Tchibo Logo" width="100" height="100">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" data-company="Mercedes-Benz">
+            <img src="images/Mercedes-Benz.png" alt="Mercedes-Benz Logo" width="100" height="100">
+        </a>
+    </div>
+</div>
 
-  </div>      
-
-  
+  <div id="companyDetails"></div>
     
 
   <footer>
     <p id="copy">&copy; 2024 Career Cliquee</p>
   </footer>
+  <script>
+    document.querySelectorAll('.box a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const companyName = link.dataset.company;
+        const encodedCompanyName = encodeURIComponent(companyName);
+        window.location.href = `company.html?name=${encodedCompanyName}`;
+      });
+    });
+  </script>
 </body>
 </html>

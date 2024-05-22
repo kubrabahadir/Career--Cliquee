@@ -14,13 +14,32 @@
 
 img {
     position: absolute;
-    left: calc(30% - 50px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    left: calc(30% - 320px); /* Sayfanın yarısında olacak şekilde sola kaydır */
     transform: translateX(-50%);
     top: 30px; /* Üstten boşluk bırak */
     width: 100px;
     height: 100px;
 }
+#companies{
 
+    position: absolute;
+    left: calc(50% + 100px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    transform: translateX(-50%);
+    top: 60px; /* Üstten boşluk bırak */
+
+}
+
+#text{
+    position: absolute;
+    left: calc(50% - 470px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    transform: translateX(-50%);
+    top: 70px; /* Üstten boşluk bırak */
+    color: grey;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
 #home {
     position: absolute;
     left: calc(50% - 50px); /* Sayfanın yarısında olacak şekilde sola kaydır */
@@ -30,7 +49,7 @@ img {
 
 #profile {
     position: absolute;
-    left: calc(50% + 50px); /* Resmin sağında olacak şekilde sola kaydır */
+    left: calc(50% + 510px); /* Resmin sağında olacak şekilde sola kaydır */
     top: 60px; /* Üstten boşluk bırak */
 }
 

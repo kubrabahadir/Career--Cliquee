@@ -1,0 +1,99 @@
+[
+    {
+      "name": "Beykoz",
+      "logo": "images/beykoz.png",
+      "profile": "Beykoz University offers a unique blend of traditional and modern education, providing students with a rich cultural and academic experience.",
+      "programs": "Undergraduate Programs: Business Administration, Engineering, Architecture. Graduate Programs: MBA, MSc in Engineering, MA in Design.",
+      "careerResources": "Career counseling, internship programs, job fairs, and alumni network support.",
+      "studentLife": "Active student clubs, sports facilities, cultural events, and on-campus housing."
+    },
+    {
+      "name": "bogazici",
+      "logo": "images/bogazici.png",
+      "profile": "Bogazici University is one of the most prestigious institutions in Turkey, known for its rigorous academic programs and vibrant campus life.",
+      "programs": "Undergraduate Programs: Computer Science, Economics, Electrical Engineering. Graduate Programs: MBA, MSc in Physics, PhD in Mathematics.",
+      "careerResources": "Extensive career services, including resume workshops, mock interviews, and employer connections.",
+      "studentLife": "Diverse student organizations, scenic campus, rich tradition of student activism and cultural activities."
+    },
+    {
+      "name": "itü",
+      "logo": "images/itü.png",
+      "profile": "Istanbul Technical University is a leading research university renowned for its engineering and technology programs.",
+      "programs": "Undergraduate Programs: Mechanical Engineering, Civil Engineering, Industrial Engineering. Graduate Programs: MSc in Nanotechnology, PhD in Computer Engineering.",
+      "careerResources": "Strong industry partnerships, research opportunities, career development seminars.",
+      "studentLife": "Innovative student projects, competitive sports teams, dynamic campus life."
+    },
+    {
+      "name": "koc",
+      "logo": "images/koç.png",
+      "profile": "Koç University is a top-tier institution offering a liberal arts education with a global perspective.",
+      "programs": "Undergraduate Programs: International Relations, Psychology, Chemical Engineering. Graduate Programs: MBA, MA in Law, MSc in Computer Science.",
+      "careerResources": "Career coaching, international internship placements, leadership development programs.",
+      "studentLife": "Engaging student societies, state-of-the-art campus facilities, vibrant social scene."
+    },
+    {
+      "name": "sabanci",
+      "logo": "images/sabancı.svg",
+      "profile": "Sabancı University provides a multidisciplinary education and is known for its innovative teaching methods and research.",
+      "programs": "Undergraduate Programs: Business Management, Visual Arts, Mechatronics. Graduate Programs: Executive MBA, MSc in Data Analytics, PhD in Political Science.",
+      "careerResources": "Entrepreneurship support, career workshops, strong alumni network.",
+      "studentLife": "Creative student clubs, modern campus amenities, diverse cultural events."
+    },
+    {
+      "name": "gebzeteknik",
+      "logo": "images/gebzeteknik.png",
+      "profile": "Gebze Technical University is focused on science and technology, with strong emphasis on research and development.",
+      "programs": "Undergraduate Programs: Environmental Engineering, Molecular Biology, Physics. Graduate Programs: MSc in Biotechnology, PhD in Materials Science.",
+      "careerResources": "Research internships, industry collaborations, career fairs.",
+      "studentLife": "Research-driven student organizations, eco-friendly campus, active academic community."
+    },
+    {
+      "name": "odtü",
+      "logo": "images/ödtü.png",
+      "profile": "Middle East Technical University (METU) is an internationally recognized institution known for its engineering and natural sciences programs.",
+      "programs": "Undergraduate Programs: Aerospace Engineering, Political Science, Chemistry. Graduate Programs: MSc in Renewable Energy, PhD in Economics.",
+      "careerResources": "International career services, research funding, startup incubators.",
+      "studentLife": "Innovative student projects, multicultural campus events, strong community engagement."
+    },
+    {
+      "name": "ankara",
+      "logo": "images/Ankara_Üniversitesi_logosu.png",
+      "profile": "Ankara University is one of the oldest universities in Turkey, offering a wide range of programs and extensive research opportunities.",
+      "programs": "Undergraduate Programs: Law, Medicine, Agricultural Sciences. Graduate Programs: MSc in Public Health, PhD in Sociology.",
+      "careerResources": "Professional development workshops, medical internships, governmental partnerships.",
+      "studentLife": "Historic campus, active student associations, diverse extracurricular activities."
+    },
+    {
+      "name": "ege",
+      "logo": "images/Ege_University_logo.svg.png",
+      "profile": "Ege University is a major research university located in Izmir, known for its medical and scientific programs.",
+      "programs": "Undergraduate Programs: Medicine, Biotechnology, Agronomy. Graduate Programs: MSc in Marine Sciences, PhD in Biomedical Engineering.",
+      "careerResources": "Healthcare career services, research assistantships, industry seminars.",
+      "studentLife": "Coastal campus, vibrant student life, strong health and wellness programs."
+    },
+    {
+      "name": "19mayis",
+      "logo": "images/1200px-OMÜ_logo.svg.png",
+      "profile": "Ondokuz Mayıs University is a prominent institution in Samsun, with a strong emphasis on health sciences and education.",
+      "programs": "Undergraduate Programs: Nursing, Physical Education, Pharmacy. Graduate Programs: MSc in Education, PhD in Medical Sciences.",
+      "careerResources": "Clinical training programs, educational workshops, career placement services.",
+      "studentLife": "Health-oriented student clubs, active sports programs, supportive campus environment."
+    },
+    {
+      "name": "karadenizTeknik",
+      "logo": "images/logo-karadeniz-teknik-universitesi.png",
+      "profile": "Karadeniz Technical University is located in Trabzon, offering a wide array of technical and engineering programs.",
+      "programs": "Undergraduate Programs: Electrical Engineering, Geology, Fisheries. Graduate Programs: MSc in Marine Engineering, PhD in Environmental Science.",
+      "careerResources": "Technical training, industry internships, career guidance.",
+      "studentLife": "Engineering clubs, scenic campus, outdoor adventure opportunities."
+    },
+    {
+      "name": "ataturkuni",
+      "logo": "images/Ataturkuni_logo.png",
+      "profile": "Atatürk University, located in Erzurum, is known for its diverse programs and commitment to regional development.",
+      "programs": "Undergraduate Programs: Veterinary Medicine, Theology, Agricultural Engineering. Graduate Programs: MSc in Environmental Engineering, PhD in History.",
+      "careerResources": "Rural development projects, professional networking, research grants.",
+      "studentLife": "Cultural festivals, regional student organizations, supportive community."
+    }
+  ]
+  

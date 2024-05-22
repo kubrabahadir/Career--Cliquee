@@ -6,15 +6,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="/admin.css">
+    <script>
+        window.onload = () => {
+            console.log("document loaded");
+            const form = document.getElementById("form");
+
+            form.addEventListener("submit", event => {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+
+                console.log(JSON.stringify(Object.fromEntries(formData)));
+
+                fetch("http://localhost:5503/admin/login", {
+                    method: "POST",
+                    body: JSON.stringify(Object.fromEntries(formData)),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(res => {
+                    if (res.ok) {
+                        res.text().then(data => {
+                            window.location = "http://localhost:5502/home.html"
+                            // Başarılı giriş durumunda yapılacak işlemler
+                        });
+                    } else {
+                        res.text().then(data => {
+                            console.error(data);
+                            // Başarısız giriş durumunda yapılacak işlemler
+                        });
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    // Hata durumunda yapılacak işlemler
+                });
+            });
+        };
+    </script>
 </head>
 <body>
     <div class="admin-container">
         <h2>Admin Panel</h2>
-        <form action="/admin/login" method="post">
-            <input type="text" id="username" name="username" required autocomplete="off">
-            <input type="password" id="password" name="password" required autocomplete="off">
-
+        <form id="form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
