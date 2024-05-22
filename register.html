@@ -1,60 +1,99 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
-  <title>Login/Register</title>
-  <!-- Cool Google Fonts -->
+  <title>Register</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet" />
-  <!-- Our stylesheet -->
-  <link rel="stylesheet" type="text/css" href="styles/register.css" />
+  <link rel="stylesheet" type="text/css" href="css/register.css" />
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
 </head>
-
 <body>
   <div id="content_container" class="container">
     <img src="images/logo.png" alt="Logo" />
     <h2>Career Cliquee</h2>
-    <form id="register-form">
+    <form id="register-form" action="/signup" method="POST" onsubmit="return validateForm()">
       <div class="form-field">
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" required />
+        <span class="error" id="firstNameError"></span>
       </div>
       <div class="form-field">
         <label for="lastName">Last Name</label>
         <input type="text" id="lastName" name="lastName" required />
+        <span class="error" id="lastNameError"></span>
       </div>
       <div class="form-field">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required />
+        <span class="error" id="emailError"></span>
       </div>
       <div class="form-field">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required />
+        <span class="error" id="passwordError"></span>
       </div>
       <div class="form-field">
         <label for="confirm-password">Confirm Password</label>
         <input type="password" id="confirm-password" name="confirm-password" required />
+        <span class="error" id="confirmPasswordError"></span>
       </div>
-      <div class="form-field">
-        <label for="userType">User Type</label>
-        <select id="userType" name="userType" required>
-          <option value="" disabled selected>Select User Type</option>
-          <option value="student-working">Student - Working</option>
-          <option value="student-not-working">Student - Not Working</option>
-          <option value="graduate-working">Graduate - Working</option>
-          <option value="graduate-not-working">Graduate - Not Working</option>
-        </select>
-      </div>
-      <input type="button" value="Submit" class="sub" id="submit" />
+      <input type="submit" value="Submit" class="sub" id="submit" />
     </form>
     <p>Already have an account? <a href="login.html">Login</a></p>
-    <button id="company-register">Registration for Companies</button>
   </div>
+  <script>
+    function validateForm() {
+      let valid = true;
 
+      const firstName = document.getElementById('firstName');
+      const lastName = document.getElementById('lastName');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirm-password');
+
+      // Clear previous error messages
+      document.getElementById('firstNameError').textContent = '';
+      document.getElementById('lastNameError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('passwordError').textContent = '';
+      document.getElementById('confirmPasswordError').textContent = '';
+
+      if (firstName.value.trim() === '') {
+        document.getElementById('firstNameError').textContent = 'First name is required';
+        valid = false;
+      }
+
+      if (lastName.value.trim() === '') {
+        document.getElementById('lastNameError').textContent = 'Last name is required';
+        valid = false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address';
+        valid = false;
+      }
+
+      if (password.value.length < 6) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long';
+        valid = false;
+      }
+
+      if (password.value !== confirmPassword.value) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+        valid = false;
+      }
+
+      return valid;
+    }
+  </script>
 </body>
-
 </html>
