@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Career Cliquee</title>
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="logo" onclick="window.location.href='home.html'">
+        <img src="logo.png" alt="Logo">
+        <div class="brand-name" style="color: #5a5d5f">CAREER CLIQUEE</div>
+        <link rel="shortcut icon" type="image/png" href="logo.png">
+      </div>
+      <div id="profile" class="dropdown">
+        <button class="dropbtn"><%= user.firstName %> <%= user.lastName %></button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <a href="/home">Home</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="content">
+        <h1>Profile</h1>
+        <div class="profile-info">
+          <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-picture">
+          <p><strong>Name:</strong> <%= user.firstName %> <%= user.lastName %></p>
+          <p><strong>Email:</strong> <%= user.email %></p>
+          <p><strong>Username:</strong> <%= user.username %></p>
+          <p><strong>Bio:</strong> <%= user.bio %></p>
+          <!-- Eklenen alanlar -->
+          <p><strong>Phone:</strong> <%= user.phone %></p>
+          <p><strong>Address:</strong> <%= user.address.street %>, <%= user.address.city %>, <%= user.address.zipCode %>, <%= user.address.country %></p>
+          <p><strong>Education:</strong></p>
+          <ul>
+            <% user.education.forEach(edu => { %>
+              <li><%= edu.degree %> in <%= edu.fieldOfStudy %> from <%= edu.institution %>, <%= edu.startYear %> - <%= edu.endYear %></li>
+            <% }) %>
+          </ul>
+          <p><strong>Work Experience:</strong></p>
+          <ul>
+            <% user.workExperience.forEach(exp => { %>
+              <li><%= exp.position %> at <%= exp.company %>, <%= exp.startDate %> - <%= exp.endDate %> (<%= exp.description %>)</li>
+            <% }) %>
+          </ul>
+          <p><strong>Skills:</strong></p>
+          <ul>
+            <% user.skills.forEach(skill => { %>
+              <li><%= skill %></li>
+            <% }) %>
+          </ul>
+          <p><strong>Languages:</strong></p>
+          <ul>
+            <% user.languages.forEach(lang => { %>
+              <li><%= lang.language %>: <%= lang.proficiency %></li>
+            <% }) %>
+          </ul>
+          <p><strong>Certifications:</strong></p>
+          <ul>
+            <% user.certifications.forEach(cert => { %>
+              <li><%= cert.name %> from <%= cert.issuingOrganization %>, <%= cert.date %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/home.js"></script>
+</body>
+</html>

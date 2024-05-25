@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Cliquee</title>
+  <link rel="stylesheet" href="styles/home.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="logo" onclick="window.location.href='home.html'">
+        <img src="logo.png" alt="Logo" />
+        <div class="brand-name" style="color: #5a5d5f">CAREER CLIQUEE</div>
+        <link rel="shortcut icon" type="image/png" href="logo.png" />
+      </div>
+      <div id="profile" class="dropdown">
+        <button class="dropbtn"><%= userName %></button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="content">
+        <div class="boxes">
+          <div class="box">
+            <a href="companies.html" class="image-link" style="background-color: #6fc0ed">
+              <img src="/images/şirketler.png" alt="Şirketler" class="image" />
+              <div class="label">Companies</div>
+            </a>
+          </div>
+          <div class="box">
+            <a href="uni.html" class="image-link" style="background-color: #6fc0ed">
+              <img src="/images/üniversiteler.png" alt="Üniversiteler" class="image" />
+              <div class="label">Universities</div>
+            </a>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <a href="deneyimler.html" class="image-link" style="background-color: #6fc0ed">
+              <img src="/images/deneyim.png" alt="Deneyimler" class="image" />
+              <div class="label">Experiences</div>
+            </a>
+          </div>
+          <div class="box">
+            <a href="ogrenme.html" class="image-link" style="background-color: #6fc0ed">
+              <img src="/images/öğrenme.png" alt="Öğrenme" class="image" />
+              <div class="label">Learning</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/home.js"></script>
+</body>
+</html>
