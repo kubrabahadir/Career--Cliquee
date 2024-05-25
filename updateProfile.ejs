@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Profile</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Assuming you have a styles.css file for styling -->
+</head>
+<body>
+  <div class="container">
+    <h2>Update Profile</h2>
+    <form action="/updateprofile" method="POST">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>">
+      </div>
+      <div>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio"><%= user.bio %></textarea>
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+      </div>
+      <div>
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street" value="<%= user.address.street %>">
+      </div>
+      <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="<%= user.address.city %>">
+      </div>
+      <div>
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" value="<%= user.address.zipCode %>">
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" value="<%= user.address.country %>">
+      </div>
+      <div>
+        <label for="education">Education:</label>
+        <textarea id="education" name="education"><%= JSON.stringify(user.education) %></textarea>
+      </div>
+      <div>
+        <label for="workExperience">Work Experience:</label>
+        <textarea id="workExperience" name="workExperience"><%= JSON.stringify(user.workExperience) %></textarea>
+      </div>
+      <div>
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" value="<%= user.skills.join(', ') %>">
+      </div>
+      <div>
+        <label for="languages">Languages:</label>
+        <textarea id="languages" name="languages"><%= JSON.stringify(user.languages) %></textarea>
+      </div>
+      <div>
+        <label for="certifications">Certifications:</label>
+        <textarea id="certifications" name="certifications"><%= JSON.stringify(user.certifications) %></textarea>
+      </div>
+      <div>
+        <label for="graduated">Graduated:</label>
+        <input type="checkbox" id="graduated" name="graduated" <%= user.graduated ? 'checked' : '' %>>
+      </div>
+      <div>
+        <label for="currentlyWorking">Currently Working:</label>
+        <input type="checkbox" id="currentlyWorking" name="currentlyWorking" <%= user.currentlyWorking ? 'checked' : '' %>>
+      </div>
+      <div>
+        <label for="currentJobCompany">Current Job Company:</label>
+        <input type="text" id="currentJobCompany" name="currentJobCompany" value="<%= user.currentJob.company %>">
+      </div>
+      <div>
+        <label for="currentJobPosition">Current Job Position:</label>
+        <input type="text" id="currentJobPosition" name="currentJobPosition" value="<%= user.currentJob.position %>">
+      </div>
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
+</body>
+</html>

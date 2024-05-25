@@ -1,5 +1,3 @@
-// Ensure that your main server file (e.g., server.js) looks like this:
-
 const express = require('express');
 const path = require('path');
 const { exec } = require('child_process');
@@ -54,6 +52,77 @@ app.get('/profile', isAuthenticated, async (req, res) => {
     res.render('profile', { user });
   } catch (err) {
     console.error('Error fetching user profile:', err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.get('/updateprofile', isAuthenticated, async (req, res) => {
+  try {
+    const user = await User.findById(req.session.userId);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    res.render('updateProfile', { user });
+  } catch (err) {
+    console.error('Error fetching user profile for update:', err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.post('/updateprofile', isAuthenticated, async (req, res) => {
+  try {
+    // Form verilerini al
+    const {
+      firstName,
+      lastName,
+      email,
+      bio,
+      phone,
+      street,
+      city,
+      zipCode,
+      country,
+      education,
+      workExperience,
+      skills,
+      languages,
+      certifications,
+      graduated,
+      currentlyWorking,
+      currentJobCompany,
+      currentJobPosition
+    } = req.body;
+
+    // Kullanıcıyı veritabanından bul
+    const user = await User.findById(req.session.userId);
+
+    // Kullanıcı bilgilerini güncelle
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.bio = bio;
+    user.phone = phone;
+    user.address.street = street;
+    user.address.city = city;
+    user.address.zipCode = zipCode;
+    user.address.country = country;
+    user.education = education ? JSON.parse(education) : [];
+    user.workExperience = workExperience ? JSON.parse(workExperience) : [];
+    user.skills = skills ? skills.split(',') : [];
+    user.languages = languages ? JSON.parse(languages) : [];
+    user.certifications = certifications ? JSON.parse(certifications) : [];
+    user.graduated = graduated === 'true';
+    user.currentlyWorking = currentlyWorking === 'true';
+    user.currentJob.company = currentJobCompany;
+    user.currentJob.position = currentJobPosition;
+
+    // Veritabanında güncelleme yap
+    await user.save();
+
+    // Profil sayfasına yönlendir
+    res.redirect('/profile');
+  } catch (err) {
+    console.error('Error updating user profile:', err);
     res.status(500).send('Server error');
   }
 });
