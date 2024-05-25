@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Details</title>
+  <link rel="stylesheet" href="styles/copmaniesss.css" />
+  <link rel="shortcut icon" type="image/png" href="logo.png"/>
+</head>
+<body>
+  <nav>
+    <ul id="navbar">
+      <a href="/home" class="logo-link">
+        <img src="logo.png" id="img" alt="Logo" />
+      </a>
+      <a href="/home" id="text">Career Cliquee</a>
+      <li id="home"><a href="/home">Home</a></li>
+      <li id="companies"><a href="/uni">Universities</a></li>
+      <div id="profile" class="dropdown">
+        <button class="dropbtn"><%= userName %></button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </ul>
+  </nav>
+
+  <div id="uniDetails" class="middle">
+    <!-- University details will be displayed here -->
+  </div>
+
+  <footer>
+    <p id="copy">&copy; 2024 Career Cliquee</p>
+  </footer>
+
+  <script src="js/uni.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

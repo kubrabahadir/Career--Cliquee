@@ -148,6 +148,28 @@ app.get('/home', isAuthenticated, async (req, res) => {
   }
 });
 
+app.get('/companies', isAuthenticated, (req, res) => {
+  res.render('companies', { userName: req.session.userName });
+});
+
+app.get('/company', isAuthenticated, (req, res) => {
+  res.render('company', { userName: req.session.userName });
+});
+
+
+app.get('/uni', isAuthenticated, (req, res) => {
+  res.render('uni', { userName: req.session.userName });
+});
+
+app.get('/universities', isAuthenticated, (req, res) => {
+  res.render('universities', { userName: req.session.userName });
+});
+
+app.get('/university', isAuthenticated, (req, res) => {
+  const universityName = req.query.name;
+  res.render('university', { userName: req.session.userName, universityName });
+});
+
 
 app.listen(port, () => {
   console.log(`Sunucu ${port} numaralı port üzerinde çalışıyor.`);

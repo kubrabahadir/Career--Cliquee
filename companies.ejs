@@ -23,9 +23,15 @@
       <!-- <a href="home.html"><img src="logo.png" id="img" /></a> -->
 
       <li id="home"><a href="/home">Home</a></li>
-      <li id="profile"><a href="profile.html">Profile</a></li>
-      
-      
+      <div id="profile" class="dropdown">
+        <button class="dropbtn"><%= userName %></button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>      
     </ul>
   </nav>
   <div class="middle">
@@ -97,15 +103,7 @@
   <footer>
     <p id="copy">&copy; 2024 Career Cliquee</p>
   </footer>
-  <script>
-    document.querySelectorAll('.box a').forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        const companyName = link.dataset.company;
-        const encodedCompanyName = encodeURIComponent(companyName);
-        window.location.href = `company.html?name=${encodedCompanyName}`;
-      });
-    });
-  </script>
+  <script src="js/home.js"></script>
+  <script src="js/companies.js"></script>
 </body>
 </html>
