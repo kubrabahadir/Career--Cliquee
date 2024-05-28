@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Departments of <%= companyName %></h1>
+  </header>
+  <main>
+    <div id="departmentList">
+      <% if (departments && departments.length > 0) { %>
+        <ul>
+          <% departments.forEach(department => { %>
+            <!-- Her departman için ayrı bir sayfaya yönlendiren bir bağlantı oluşturun -->
+                <li><a href="/department?name=<%= companyName %>&department=<%= department %>"><%= department %></a></li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No departments available for this company.</p>
+      <% } %>
+    </div>
+  </main>
+  <footer>
+    <a href="/companies">Back to Companies</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= departmentName %> Department - <%= companyName %></title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Varsayılan stil dosyanız -->
+</head>
+<body>
+  <header>
+    <h1><%= companyName %> - <%= departmentName %> Department</h1>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/companies">Companies</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Details for <%= departmentName %> Department</h2>
+
+    <h3>Members of the <%= departmentName %> Department</h3>
+    <ul>
+      <% users.forEach(function(user) { %>
+        <li><%= user.firstName %> <%= user.lastName %> - <%= user.currentJob.position %></li>
+      <% }); %>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2024 Your Company</p>
+  </footer>
+</body>
+</html>

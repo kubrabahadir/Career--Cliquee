@@ -31,24 +31,32 @@
         <input type="text" id="phone" name="phone" value="<%= user.phone %>">
       </div>
       <div>
-        <label for="street">Street:</label>
-        <input type="text" id="street" name="street" value="<%= user.address.street %>">
-      </div>
-      <div>
         <label for="city">City:</label>
         <input type="text" id="city" name="city" value="<%= user.address.city %>">
-      </div>
-      <div>
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode" value="<%= user.address.zipCode %>">
       </div>
       <div>
         <label for="country">Country:</label>
         <input type="text" id="country" name="country" value="<%= user.address.country %>">
       </div>
       <div>
-        <label for="education">Education:</label>
-        <textarea id="education" name="education"><%= JSON.stringify(user.education) %></textarea>
+        <label for="institution">University:</label>
+        <input type="text" id="institution" name="institution" value="<%=user.institution %>">
+      </div>
+      <div>
+        <label for="degree">Degree:</label>
+        <textarea id="degree" name="degree"><%= user.degree %></textarea>
+      </div>
+      <div>
+        <label for="fieldOfStudy">Degree:</label>
+        <textarea id="fieldOfStudy" name="fieldOfStudy"><%= user.fieldOfStudy %></textarea>
+      </div>
+      <div>
+        <label for="startYear">Start Year:</label>
+        <textarea id="startYear" name="startYear"><%= user.startYear %></textarea>
+      </div>
+      <div>
+        <label for="endYear">End Year:</label>
+        <textarea id="endYear" name="endYear"><%= user.endYear %></textarea>
       </div>
       <div>
         <label for="workExperience">Work Experience:</label>
@@ -76,7 +84,7 @@
       </div>
       <div>
         <label for="currentJobCompany">Current Job Company:</label>
-        <input type="text" id="currentJobCompany" name="currentJobCompany" value="<%= user.currentJob.company %>">
+        <select id="currentJobCompany" name="currentJobCompany"></select>
       </div>
       <div>
         <label for="currentJobPosition">Current Job Position:</label>
@@ -85,5 +93,6 @@
       <button type="submit">Update Profile</button>
     </form>
   </div>
+  <script src="js/updateProfile.js"></script>
 </body>
 </html>

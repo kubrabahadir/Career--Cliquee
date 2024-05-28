@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const crypto = require('crypto'); // Import the crypto module
 
 const userSchema = new Schema({
   firstName: {
@@ -39,18 +40,16 @@ const userSchema = new Schema({
     default: ''
   },
   address: {
-    street: String,
     city: String,
-    zipCode: String,
     country: String
   },
-  education: [{
+  education: {
     institution: String,
     degree: String,
     fieldOfStudy: String,
     startYear: Number,
     endYear: Number
-  }],
+  },
   workExperience: [{
     company: String,
     position: String,
@@ -79,8 +78,16 @@ const userSchema = new Schema({
   currentJob: {
     company: String,
     position: String
-  }
+  },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+userSchema.methods.generateResetToken = function() {
+  const token = crypto.randomBytes(20).toString('hex');
+  this.resetPasswordToken = token;
+  this.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+  return token;
+};
+
+module.exports = mongoose.model('User', userSchema);

@@ -8,18 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="styles/register.css" />
-  <style>
-    .error {
-      color: red;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="styles/login.css" />
 </head>
 <body>
-  <div id="content_container" class="container">
-    <img src="images/logo.png" alt="Logo" />
-    <h2>Career Cliquee</h2>
-    <form id="register-form" action="/signup" method="POST" onsubmit="return validateForm()">
+  <div class="container">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" />
+      <h2>KariyerYa</h2>
+    </div>
+    <form  action="/signup" method="POST" onsubmit="return validateForm()">
+      <span class="error" id="formError"></span>
       <div class="form-field">
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" required />
@@ -45,55 +43,10 @@
         <input type="password" id="confirm-password" name="confirm-password" required />
         <span class="error" id="confirmPasswordError"></span>
       </div>
-      <input type="submit" value="Submit" class="sub" id="submit" />
+      <button type="submit" id="submit">Signup</button>
     </form>
     <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
-  <script>
-    function validateForm() {
-      let valid = true;
-
-      const firstName = document.getElementById('firstName');
-      const lastName = document.getElementById('lastName');
-      const email = document.getElementById('email');
-      const password = document.getElementById('password');
-      const confirmPassword = document.getElementById('confirm-password');
-
-      // Clear previous error messages
-      document.getElementById('firstNameError').textContent = '';
-      document.getElementById('lastNameError').textContent = '';
-      document.getElementById('emailError').textContent = '';
-      document.getElementById('passwordError').textContent = '';
-      document.getElementById('confirmPasswordError').textContent = '';
-
-      if (firstName.value.trim() === '') {
-        document.getElementById('firstNameError').textContent = 'First name is required';
-        valid = false;
-      }
-
-      if (lastName.value.trim() === '') {
-        document.getElementById('lastNameError').textContent = 'Last name is required';
-        valid = false;
-      }
-
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email.value)) {
-        document.getElementById('emailError').textContent = 'Please enter a valid email address';
-        valid = false;
-      }
-
-      if (password.value.length < 6) {
-        document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long';
-        valid = false;
-      }
-
-      if (password.value !== confirmPassword.value) {
-        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
-        valid = false;
-      }
-
-      return valid;
-    }
-  </script>
+  <script src="js/register.js"></script>
 </body>
 </html>

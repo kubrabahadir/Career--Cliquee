@@ -15,14 +15,14 @@
     <p><strong>Email:</strong> <%= user.email %></p>
     <p><strong>Bio:</strong> <%= user.bio %></p>
     <p><strong>Phone:</strong> <%= user.phone %></p>
-    <p><strong>Address:</strong> <%= user.address.street %>, <%= user.address.city %>, <%= user.address.zipCode %>, <%= user.address.country %></p>
+    <p><strong>Address:</strong>  <%= user.address.city %>,  <%= user.address.country %></p>
     
     <h3>Education</h3>
-    <ul>
-      <% user.education.forEach(function(edu) { %>
-        <li><strong><%= edu.institution %></strong>, <%= edu.degree %> in <%= edu.fieldOfStudy %> (<%= edu.startYear %> - <%= edu.endYear %>)</li>
-      <% }); %>
-    </ul>
+    <p><strong>University:</strong> <%= user.institution %></p>
+    <p><strong>Degree:</strong> <%= user.degree %></p>
+    <p><strong>Are You Student?</strong> <%= user.fieldOfStudy %></p>
+    <p><strong>Start Year-End Year:</strong> <%= user.startYear %>, <%= user.endYear %></p>
+  
     
     <h3>Work Experience</h3>
     <ul>
