@@ -4,62 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
-  <link rel="stylesheet" href="/styles.css"> <!-- Varsayılan stil dosyanız -->
+  <link rel="stylesheet" href="styles/copmaniesss.css" />
+  <link rel="stylesheet" type="text/css" href="styles/login.css" />
 </head>
 <body>
-  <h1>Profile</h1>
-  
+  <div id="profile" class="dropdown">
+    <button class="dropbtn"><%= userName %></button>
+    <div class="dropdown-content">
+      <a href="/profile">Profile</a>
+      <a href="/home">Home</a>
+      <a href="/uni">University</a>
+      <a href="/companies">Companies</a>
+      <form id="logout-form" action="/logout" method="post" style="display: inline;">
+        <button id="logout-formb" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+
   <div class="profile">
-    <img src="/images/<%= user.profilePicture %>" alt="Profile Picture">
     <h2><%= user.firstName %> <%= user.lastName %></h2>
     <p><strong>Email:</strong> <%= user.email %></p>
-    <p><strong>Bio:</strong> <%= user.bio %></p>
-    <p><strong>Phone:</strong> <%= user.phone %></p>
-    <p><strong>Address:</strong>  <%= user.address.city %>,  <%= user.address.country %></p>
-    
+
     <h3>Education</h3>
-    <p><strong>University:</strong> <%= user.institution %></p>
-    <p><strong>Degree:</strong> <%= user.degree %></p>
-    <p><strong>Are You Student?</strong> <%= user.fieldOfStudy %></p>
-    <p><strong>Start Year-End Year:</strong> <%= user.startYear %>, <%= user.endYear %></p>
-  
-    
-    <h3>Work Experience</h3>
-    <ul>
-      <% user.workExperience.forEach(function(work) { %>
-        <li><strong><%= work.company %></strong>: <%= work.position %> (<%= work.startDate.toDateString() %> - <%= work.endDate ? work.endDate.toDateString() : 'Present' %>)<br><%= work.description %></li>
-      <% }); %>
-    </ul>
-    
-    <h3>Skills</h3>
-    <ul>
-      <% user.skills.forEach(function(skill) { %>
-        <li><%= skill %></li>
-      <% }); %>
-    </ul>
-    
-    <h3>Languages</h3>
-    <ul>
-      <% user.languages.forEach(function(language) { %>
-        <li><%= language.language %> - <%= language.proficiency %></li>
-      <% }); %>
-    </ul>
-    
-    <h3>Certifications</h3>
-    <ul>
-      <% user.certifications.forEach(function(cert) { %>
-        <li><strong><%= cert.name %></strong>, issued by <%= cert.issuingOrganization %> on <%= cert.date.toDateString() %></li>
-      <% }); %>
-    </ul>
-    
+    <p><strong>University:</strong> <%= user.education.institution %></p>
+    <p><strong>Faculty:</strong> <%= user.education.faculty %></p>
+    <div>
+      <strong>Are you Student?</strong> <%= user.education.status === 'student' ? 'Student' : 'Alumni' %>
+    </div>
+    <div>
+      <strong>Profile Link:</strong> <a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a>
+    </div>
+    <div>
+      <strong>Interested in Becoming a Mentor:</strong> <%= user.mentorInterest ? 'Yes' : 'No' %>
+    </div>
     <h3>Current Job</h3>
     <p><strong>Company:</strong> <%= user.currentJob.company %></p>
     <p><strong>Position:</strong> <%= user.currentJob.position %></p>
-    
-    <p><strong>Graduated:</strong> <%= user.graduated ? 'Yes' : 'No' %></p>
-    <p><strong>Currently Working:</strong> <%= user.currentlyWorking ? 'Yes' : 'No' %></p>
-    
+
     <a href="/updateprofile">Update Profile</a>
   </div>
+  <script src="js/home.js"></script>
 </body>
 </html>

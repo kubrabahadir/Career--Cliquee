@@ -3,96 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/copmaniesss.css" />
+  <link rel="stylesheet" type="text/css" href="styles/login.css" />
   <title>Update Profile</title>
-  <link rel="stylesheet" href="/styles.css"> <!-- Assuming you have a styles.css file for styling -->
 </head>
 <body>
-  <div class="container">
-    <h2>Update Profile</h2>
-    <form action="/updateprofile" method="POST">
+  <div id="profile" class="dropdown">
+    <button class="dropbtn"><%= userName %></button>
+    <div class="dropdown-content">
+      <a href="/profile">Profile</a>
+      <a href="/home">Home</a>
+      <a href="/uni">University</a>
+      <a href="/companies">Companies</a>
+      <form id="logout-form" action="/logout" method="post" style="display: inline;">
+        <button id="logout-formb" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+    <form  class="form-field" action="/updateprofile" method="POST">
       <div>
-        <label for="firstName">First Name:</label>
+        <label  for="firstName" style="color: #363739;  font-weight: bold;">First Name:</label>
         <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
       </div>
       <div>
-        <label for="lastName">Last Name:</label>
+        <label for="lastName" style="color: #363739; font-weight: bold;">Last Name:</label>
         <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
       </div>
       <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<%= user.email %>">
+        <label for="institution" style="color: #363739;  font-weight: bold;">University:</label>
+        <select id="institution" name="institution">
+          <% universities.forEach(university => { %>
+            <option value="<%= university.name %>" <%= university.name === user.education.institution ? 'selected' : '' %>><%= university.name %></option>
+          <% }); %>
+        </select>
       </div>
       <div>
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio"><%= user.bio %></textarea>
+        <label for="faculty" style="color: #363739;  font-weight: bold;">Faculty:</label>
+        <select id="faculty" name="faculty">
+          <% userFaculties.forEach(faculty => { %>
+            <option value="<%= faculty %>" <%= faculty === user.education.faculty ? 'selected' : '' %>><%= faculty %></option>
+          <% }); %>
+        </select>
       </div>
       <div>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+        <label for="status" style="color: #363739;  font-weight: bold;">Field of Study:</label>
+        <select id="status" name="status">
+          <option value="student" <%= user.education.status === 'student' ? 'selected' : '' %>>Student</option>
+          <option value="alumni" <%= user.education.status === 'alumni' ? 'selected' : '' %>>Alumni</option>
+        </select>
       </div>
       <div>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" value="<%= user.address.city %>">
+        <label for="profileLink" style="color: #363739;  font-weight: bold;">LinkedIn :</label>
+        <input type="url" id="profileLink" name="profileLink" value="<%= user.profileLink %>">
       </div>
       <div>
-        <label for="country">Country:</label>
-        <input type="text" id="country" name="country" value="<%= user.address.country %>">
+        <label for="mentorInterest" style="color: #363739;  font-weight: bold;">Interested in Becoming a Mentor?</label>
+        <input type="checkbox" id="mentorInterest" name="mentorInterest" <%= user.mentorInterest ? 'checked' : '' %>>
       </div>
       <div>
-        <label for="institution">University:</label>
-        <input type="text" id="institution" name="institution" value="<%=user.institution %>">
+        <label for="currentJobCompany" style="color: #363739;  font-weight: bold;">Current Job Company:</label>
+        <input type="text" id="currentJobCompany" name="currentJobCompany" value="<%= user.currentJob.company %>">
       </div>
       <div>
-        <label for="degree">Degree:</label>
-        <textarea id="degree" name="degree"><%= user.degree %></textarea>
-      </div>
-      <div>
-        <label for="fieldOfStudy">Degree:</label>
-        <textarea id="fieldOfStudy" name="fieldOfStudy"><%= user.fieldOfStudy %></textarea>
-      </div>
-      <div>
-        <label for="startYear">Start Year:</label>
-        <textarea id="startYear" name="startYear"><%= user.startYear %></textarea>
-      </div>
-      <div>
-        <label for="endYear">End Year:</label>
-        <textarea id="endYear" name="endYear"><%= user.endYear %></textarea>
-      </div>
-      <div>
-        <label for="workExperience">Work Experience:</label>
-        <textarea id="workExperience" name="workExperience"><%= JSON.stringify(user.workExperience) %></textarea>
-      </div>
-      <div>
-        <label for="skills">Skills:</label>
-        <input type="text" id="skills" name="skills" value="<%= user.skills.join(', ') %>">
-      </div>
-      <div>
-        <label for="languages">Languages:</label>
-        <textarea id="languages" name="languages"><%= JSON.stringify(user.languages) %></textarea>
-      </div>
-      <div>
-        <label for="certifications">Certifications:</label>
-        <textarea id="certifications" name="certifications"><%= JSON.stringify(user.certifications) %></textarea>
-      </div>
-      <div>
-        <label for="graduated">Graduated:</label>
-        <input type="checkbox" id="graduated" name="graduated" <%= user.graduated ? 'checked' : '' %>>
-      </div>
-      <div>
-        <label for="currentlyWorking">Currently Working:</label>
-        <input type="checkbox" id="currentlyWorking" name="currentlyWorking" <%= user.currentlyWorking ? 'checked' : '' %>>
-      </div>
-      <div>
-        <label for="currentJobCompany">Current Job Company:</label>
-        <select id="currentJobCompany" name="currentJobCompany"></select>
-      </div>
-      <div>
-        <label for="currentJobPosition">Current Job Position:</label>
+        <label for="currentJobPosition" style="color: #363739;  font-weight: bold;">Current Job Position:</label>
         <input type="text" id="currentJobPosition" name="currentJobPosition" value="<%= user.currentJob.position %>">
       </div>
       <button type="submit">Update Profile</button>
     </form>
   </div>
   <script src="js/updateProfile.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

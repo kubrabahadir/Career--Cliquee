@@ -52,7 +52,8 @@ app.get('/profile', isAuthenticated, async (req, res) => {
    if (!user) {
      return res.status(404).send('User not found');
    }
-   res.render('profile', { user });
+   const userName = `${user.firstName} ${user.lastName}`; // Kullanıcının adını ve soyadını birleştiriyoruz
+   res.render('profile', { user, userName }); // userName değişkenini ekliyoruz
  } catch (err) {
    console.error('Error fetching user profile:', err);
    res.status(500).send('Server error');
@@ -60,80 +61,43 @@ app.get('/profile', isAuthenticated, async (req, res) => {
 });
 
 app.get('/updateprofile', isAuthenticated, async (req, res) => {
- try {
-   const user = await User.findById(req.session.userId);
-   if (!user) {
-     return res.status(404).send('User not found');
-   }
-   res.render('updateProfile', { user });
- } catch (err) {
-   console.error('Error fetching user profile for update:', err);
-   res.status(500).send('Server error');
- }
+  try {
+    const user = await User.findById(req.session.userId);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    const universities = require('./universities.json');
+    const userUniversity = universities.find(u => u.name === user.education.institution);
+    const userFaculties = [...(userUniversity?.faculty || []), user.education.faculty].filter(Boolean);
+    const userName = `${user.firstName} ${user.lastName}`;
+
+    res.render('updateprofile', { user, userName, universities, userFaculties });
+  } catch (err) {
+    console.error('Error fetching user profile for update:', err);
+    res.status(500).send('Server error');
+  }
 });
 
 app.post('/updateprofile', isAuthenticated, async (req, res) => {
- try {
-   // Form verilerini al
-   const {
-     firstName,
-     lastName,
-     email,
-     bio,
-     phone,
-     city,
-     country,
-     institution,
-     degree,
-     fieldOfStudy,
-     startYear,
-     endYear,
-     workExperience,
-     skills,
-     languages,
-     certifications,
-     graduated,
-     currentlyWorking,
-     currentJobCompany,
-     currentJobPosition
-   } = req.body;
+  try {
+    const { firstName, lastName, institution, faculty, status , currentJobCompany, currentJobPosition,profileLink,mentorInterest } = req.body;
+    const user = await User.findById(req.session.userId);
 
-   // Kullanıcıyı veritabanından bul
-   const user = await User.findById(req.session.userId);
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.education = { institution, faculty, status };
+    user.currentJob.company = currentJobCompany;
+    user.currentJob.position = currentJobPosition;
+    user.profileLink = profileLink;
+    user.mentorInterest = mentorInterest === 'on';
 
-   // Kullanıcı bilgilerini güncelle
-   user.firstName = firstName;
-   user.lastName = lastName;
-   user.email = email;
-   user.bio = bio;
-   user.phone = phone;
-   user.address.city = city;
-   user.address.country = country;
-   user.education = {
-    institution: institution,
-    degree: degree,
-    fieldOfStudy: fieldOfStudy,
-    startYear: startYear,
-    endYear: endYear
-    };
-   user.workExperience = workExperience ? JSON.parse(workExperience) : [];
-   user.skills = skills ? skills.split(',') : [];
-   user.languages = languages ? JSON.parse(languages) : [];
-   user.certifications = certifications ? JSON.parse(certifications) : [];
-   user.graduated = graduated === 'true';
-   user.currentlyWorking = currentlyWorking === 'true';
-   user.currentJob.company = currentJobCompany;
-   user.currentJob.position = currentJobPosition;
-
-   // Veritabanında güncelleme yap
-   await user.save();
-
-   // Profil sayfasına yönlendir
-   res.redirect('/profile');
- } catch (err) {
-   console.error('Error updating user profile:', err);
-   res.status(500).send('Server error');
- }
+    await user.save();
+    res.redirect('/profile');
+  } catch (err) {
+    console.error('Error updating user profile:', err);
+    res.status(500).send('Server error');
+  }
 });
 
 app.get('/', (req, res) => {
@@ -307,6 +271,24 @@ app.post('/forgot-password', async (req, res) => {
   }
 });
 
+app.get('/department', isAuthenticated, async (req, res) => {
+  const companyName = req.query.name;
+
+  try {
+    const companies = require('./companies.json');
+    const company = companies.find(c => c.name === companyName);
+
+    if (company) {
+      res.render('department', { companyName: company.name, departments: company.departments });
+    } else {
+      res.status(404).send('Company not found');
+    }
+  } catch (err) {
+    console.error('Error fetching company departments:', err);
+    res.status(500).send('Server error');
+  }
+});
+
 app.get('/reset-password/:token', async (req, res) => {
   const { token } = req.params;
 
@@ -353,45 +335,6 @@ app.post('/reset-password/:token', async (req, res) => {
   }
 });
 
-app.get('/departments', isAuthenticated, async (req, res) => {
-  const companyName = req.query.name;
-
-  try {
-    const companies = require('./companies.json');
-    const company = companies.find(c => c.name === companyName);
-
-    if (company) {
-      res.render('departments', { companyName: company.name, departments: company.departments });
-    } else {
-      res.status(404).send('Company not found');
-    }
-  } catch (err) {
-    console.error('Error fetching company departments:', err);
-    res.status(500).send('Server error');
-  }
-});
-
-app.get('/department', async (req, res) => {
-  const { name, department } = req.query;
-
-  try {
-    const departmentUsers = await User.find({
-      'currentJob.company': name,
-      'currentJob.position': department
-    });
-
-    res.render('department', {
-      companyName: name,
-      departmentName: department,
-      users: departmentUsers
-    });
-  } catch (err) {
-    console.error('Error fetching department users:', err);
-    res.status(500).send('Server error');
-  }
-});
-
-
 
 
 app.listen(port, () => {
@@ -404,4 +347,5 @@ app.listen(port, () => {
     console.log(stdout);
   });
 });
+
 

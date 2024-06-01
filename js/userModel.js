@@ -27,58 +27,21 @@ const userSchema = new Schema({
     required: [true, 'Username is required'],
     unique: true
   },
-  bio: {
-    type: String,
-    default: ''
-  },
   profilePicture: {
     type: String,
     default: 'default-profile.png'
   },
-  phone: {
-    type: String,
-    default: ''
-  },
-  address: {
-    city: String,
-    country: String
-  },
   education: {
     institution: String,
-    degree: String,
-    fieldOfStudy: String,
-    startYear: Number,
-    endYear: Number
-  },
-  workExperience: [{
-    company: String,
-    position: String,
-    startDate: Date,
-    endDate: Date,
-    description: String
-  }],
-  skills: [String],
-  languages: [{
-    language: String,
-    proficiency: String // Beginner, Intermediate, Advanced
-  }],
-  certifications: [{
-    name: String,
-    issuingOrganization: String,
-    date: Date
-  }],
-  graduated: {
-    type: Boolean,
-    default: false
-  },
-  currentlyWorking: {
-    type: Boolean,
-    default: false
+    status: { type: String, enum: ['alumni', 'student'] },
+    faculty: String
   },
   currentJob: {
     company: String,
     position: String
   },
+  mentorInterest: Boolean,
+  profileLink: String,
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
