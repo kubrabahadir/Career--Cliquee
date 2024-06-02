@@ -271,15 +271,24 @@ app.post('/forgot-password', async (req, res) => {
   }
 });
 
+// Assuming the isAuthenticated middleware and User model are defined earlier in your code
+// Assuming the isAuthenticated middleware and User model are defined earlier in your code
 app.get('/department', isAuthenticated, async (req, res) => {
-  const companyName = req.query.name;
+  const companyName = req.query.company;
+  const deptName = req.query.dept;
 
   try {
     const companies = require('./companies.json');
     const company = companies.find(c => c.name === companyName);
 
     if (company) {
-      res.render('department', { companyName: company.name, departments: company.departments });
+      const users = await User.find({ 'currentJob.company': companyName, 'currentJob.position': deptName });
+
+      if (users.length > 0) {
+        res.render('department', { companyName: company.name, departmentName: deptName, users });
+      } else {
+        res.render('department', { companyName: company.name, departmentName: deptName, users: [], message: 'No users found in this department.' });
+      }
     } else {
       res.status(404).send('Company not found');
     }
@@ -288,6 +297,35 @@ app.get('/department', isAuthenticated, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+
+app.get('/faculty', isAuthenticated, async (req, res) => {
+  const universityName = req.query.university;
+  const facultyName = req.query.faculty;
+
+  try {
+    const universities = require('./universities.json');
+    const university = universities.find(u => u.name === universityName);
+
+    if (university){
+      const users = await User.find({'education.institution':universityName,'education.faculty':facultyName});
+      if (users.length > 0) {
+        res.render('faculty', { universityName: university.name, facultyName: facultyName, users });
+      } else {
+        res.render('faculty', { universityName: university.name, facultyName: facultyName, users: [], message: 'No users found in this faculty.' });
+      }
+    }
+    else{
+      res.status(404).send('University not found');
+    }
+  }
+  catch (err) {
+    console.error('Error fetching company faculties:', err);
+    res.status(500).send('Server error');
+  }
+});
+
+
+
 
 app.get('/reset-password/:token', async (req, res) => {
   const { token } = req.params;

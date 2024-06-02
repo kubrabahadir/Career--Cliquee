@@ -1,50 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  const uniName = params.get('name');
+  const urlParams = new URLSearchParams(window.location.search);
+  const universityName = urlParams.get('name');
 
   fetch('/universities.json')
     .then(response => response.json())
     .then(universities => {
-      const university = universities.find(u => u.name === uniName);
-      const uniDetails = document.getElementById('uniDetails');
-
+      const university = universities.find(u => u.name === universityName);
       if (university) {
+        const uniDetails = document.getElementById('uniDetails');
         uniDetails.innerHTML = `
-          <!--<h1>${university.name}</h1>-->
-          <!--<p>${university.description}</p>-->
-          <div class="box">
-            <h3>University Profile</h3>
-            <!--<p>${university.profile}</p>-->
-          </div>
-          <div class="box">
-            <h3>Programs</h3>
-            <!--<p>${university.programs}</p>-->
-          </div>
-          <div class="box">
-            <h3>Career Resources</h3>
-            <!--<p>${university.careerResources}</p>-->
-          </div>
-          <div class="box">
-            <h3>Student Life</h3>
-            <!--<p>${university.studentLife}</p>-->
-          </div>
+          ${university.faculty.map(dept => `
+            <div class="box" style="text-decoration: none; color: white">
+              <a href="#" class="faculty-link" data-university="${university.name}" data-faculty="${dept}" style="text-decoration: none; color: white"><p>${dept}</p></a>
+            </div>
+          `).join('')}
         `;
 
-        const boxes = uniDetails.querySelectorAll('.box');
-        boxes.forEach(box => {
-          box.addEventListener('click', navigateToLobby);
+        document.querySelectorAll('.faculty-link').forEach(link => {
+          link.addEventListener('click', event => {
+            event.preventDefault();
+            const linkElement = event.target.closest('a');
+            const universityName = linkElement.getAttribute('data-university');
+            const facultyName = linkElement.getAttribute('data-faculty');
+            fetch(`/faculty?university=${universityName}&faculty=${facultyName}`)
+              .then(response => response.text())
+              .then(html => {
+                const facultyContainer = document.getElementById('facultyContainer');
+                if (facultyContainer) {
+                  facultyContainer.innerHTML = html;
+                } else {
+                  document.body.innerHTML = html;
+                }
+              })
+              .catch(error => {
+                console.error('Error fetching faculty details:', error);
+                facultyContainer.innerHTML = '<p>Error loading faculty details.</p>';
+              });
+          });
         });
       } else {
+        const uniDetails = document.getElementById('uniDetails');
         uniDetails.innerHTML = '<p>University not found.</p>';
       }
     })
     .catch(error => {
-      console.error('Error fetching university data:', error);
+      console.error('Error fetching data:', error);
       const uniDetails = document.getElementById('uniDetails');
       uniDetails.innerHTML = '<p>Error loading university details.</p>';
     });
 });
-
-function navigateToLobby() {
-  window.location.href = 'lobby.html';
-}

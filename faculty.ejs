@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= departmentName %> Department - <%= companyName %></title>
-  <link rel="stylesheet" href="/styles/copmaniesss.css"> <!-- Your default stylesheet -->
+  <title><%= facultyName %> Faculty - <%= universityName %></title>
+  <link rel="stylesheet" href="/styles/universities.css"> <!-- Your default stylesheet -->
 </head>
 <body>
   <header>
-    <h1><%= companyName %> - <%= departmentName %> Department</h1>
+    <h1><%= universityName %> - <%= facultyName %> Faculty</h1>
     <nav>
       <ul>
         <li><a href="/home">Home</a></li>
-        <li><a href="/companies">Companies</a></li>
+        <li><a href="/universities">Universities</a></li>
         <li><a href="/profile">Profile</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <h2>Details for <%= departmentName %> Department</h2>
+    <h2>Details for <%= facultyName %> Department</h2>
 
-    <h3>Members of the <%= departmentName %> Department</h3>
+    <h3>Members of the <%= facultyName %> Department</h3>
     <ul>
       <% users.forEach(function(user) { %>
         <li>
