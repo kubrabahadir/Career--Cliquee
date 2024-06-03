@@ -40,6 +40,18 @@ img {
     text-decoration: none;
     
 }
+#text2{
+    margin-top: 80px; 
+    position: absolute;
+    left: calc(50% - 300px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    transform: translateX(-50%);
+    top: 70px; /* Üstten boşluk bırak */
+    color: grey;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
 #home {
     position: absolute;
     left: calc(50% - 50px); /* Sayfanın yarısında olacak şekilde sola kaydır */
@@ -220,4 +232,8 @@ img {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #1E5F8B;} 
+
+#place{
+    margin-top: 200px; 
+}
 

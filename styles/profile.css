@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Profile Styles */
+  .profile {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .profile h2 {
+    color: #333;
+    margin-bottom: 10px; /* Add margin bottom */
+  }
+  
+  .profile h3 {
+    color: #666;
+    margin-top: 20px; /* Add margin top */
+  }
+  
+  .profile p {
+    margin: 5px 0;
+  }
+  
+  .profile a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .profile a:hover {
+    text-decoration: underline;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3E92CC;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2974A9;
+}

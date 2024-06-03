@@ -15,7 +15,7 @@
       "programs": "Undergraduate Programs: Computer Science, Economics, Electrical Engineering. Graduate Programs: MBA, MSc in Physics, PhD in Mathematics.",
       "careerResources": "Extensive career services, including resume workshops, mock interviews, and employer connections.",
       "studentLife": "Diverse student organizations, scenic campus, rich tradition of student activism and cultural activities.",
-      "faculty": ["Faculty of Arts and Sciences, Faculty of Economics and Administrative Sciences, Faculty of Engineering"]
+      "faculty": ["Faculty of Arts and Sciences", "Faculty of Economics and Administrative Sciences", "Faculty of Engineering"]
   },
   {
       "name": "Istanbul Technical University",
@@ -33,7 +33,7 @@
       "programs": "Undergraduate Programs: International Relations, Psychology, Chemical Engineering. Graduate Programs: MBA, MA in Law, MSc in Computer Science.",
       "careerResources": "Career coaching, international internship placements, leadership development programs.",
       "studentLife": "Engaging student societies, state-of-the-art campus facilities, vibrant social scene.",
-      "faculty": ["College of Administrative Sciences and Economics, College of Engineering, College of Social Sciences and Humanities"]
+      "faculty": ["College of Administrative Sciences and Economics", "College of Engineering", "College of Social Sciences and Humanities"]
   },
   {
       "name": "Sabancı University",
@@ -42,7 +42,7 @@
       "programs": "Undergraduate Programs: Business Management, Visual Arts, Mechatronics. Graduate Programs: Executive MBA, MSc in Data Analytics, PhD in Political Science.",
       "careerResources": "Entrepreneurship support, career workshops, strong alumni network.",
       "studentLife": "Creative student clubs, modern campus amenities, diverse cultural events.",
-      "faculty": ["Faculty of Engineering and Natural Sciences, Faculty of Arts and Social Sciences, Sabancı Business School"]
+      "faculty": ["Faculty of Engineering and Natural Sciences", "Faculty of Arts and Social Sciences", "Sabancı Business School"]
   },
   {
       "name": "Gebze Technical University",
@@ -51,7 +51,7 @@
       "programs": "Undergraduate Programs: Environmental Engineering, Molecular Biology, Physics. Graduate Programs: MSc in Biotechnology, PhD in Materials Science.",
       "careerResources": "Research internships, industry collaborations, career fairs.",
       "studentLife": "Research-driven student organizations, eco-friendly campus, active academic community.",
-      "faculty": ["Faculty of Engineering, Faculty of Science, Faculty of Architecture"]
+      "faculty": ["Faculty of Engineering", "Faculty of Science", "Faculty of Architecture"]
   },
   {
       "name": "Orta Doğu Technical University",

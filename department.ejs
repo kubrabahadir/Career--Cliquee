@@ -3,43 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= departmentName %> Department - <%= companyName %></title>
+  <title><%= departmentName %> Department - <%= companyName %> </title>
   <link rel="stylesheet" href="/styles/copmaniesss.css"> <!-- Your default stylesheet -->
 </head>
 <body>
-  <header>
-    <h1><%= companyName %> - <%= departmentName %> Department</h1>
-    <nav>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/companies">Companies</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h2>Details for <%= departmentName %> Department</h2>
+  <nav>
+    <ul id="navbar">
+      <a href="/home" class="logo-link">
+        <img src="logo.png" id="img" alt="Logo" />
+      </a>
+      <span id="text2"><%= companyName %> - <%= departmentName %> Department Workers</span>
+      <li id="home"><a href="/home">Home</a></li>
+      <li id="companies"><a href="/companies">Companies</a></li>
+      <div id="profile" class="dropdown">
+        <button class="dropbtn">Settings</button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </ul>
+  </nav>
+  <main id="place">
 
-    <h3>Members of the <%= departmentName %> Department</h3>
     <ul>
       <% users.forEach(function(user) { %>
-        <li>
-          <strong>Name:</strong> <%= user.firstName %> <%= user.lastName %> <br>
-          <strong>Email:</strong> <%= user.email %> <br>
-          <strong>Profile Link:</strong> <a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a> <br>
-          <strong>University:</strong> <%= user.education.institution %> <br>
-          <strong>Faculty:</strong> <%= user.education.faculty %> <br>
-          <strong>Status:</strong> <%= user.education.status === 'student' ? 'Student' : 'Alumni' %> <br>
-          <strong>Mentor Interest:</strong> <%= user.mentorInterest ? 'Yes' : 'No' %> <br>
-          <strong>Company:</strong> <%= user.currentJob.company %> <br>
-          <strong>Position:</strong> <%= user.currentJob.position %> <br>
-        </li>
+        <div class="dropdown">
+          <button class="dropbtn"><%= user.firstName %> <%= user.lastName %></button>
+          <div class="dropdown-content">
+            <span>Email:<%= user.email %> </a><span>
+            Profile Link:<a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a></span>
+            University: <%= user.education.institution %></span>
+            Faculty: <%= user.education.faculty %></span>
+            Status:<%= user.education.status === 'student' ? 'Student' : 'Alumni' %></span>
+            Mentor Interest:<%= user.mentorInterest ? 'Yes' : 'No' %></span>
+            Company:<%= user.currentJob.company %></a></span>
+            Position:</strong> <%= user.currentJob.position %> </span>
+          </div>
+        </div>
       <% }); %>
     </ul>
   </main>
   <footer>
-    <p>&copy; 2024 Your Company</p>
+    <p id="copy">&copy; 2024 Career Cliquee</p>
   </footer>
 </body>
 </html>
