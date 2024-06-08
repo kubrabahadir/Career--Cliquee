@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= departmentName %> Department - <%= companyName %> </title>
+  <title>
+    <%= departmentName %> Department - <%= companyName %>
+  </title>
   <link rel="stylesheet" href="/styles/copmaniesss.css"> <!-- Your default stylesheet -->
 </head>
+
 <body>
   <nav>
     <ul id="navbar">
       <a href="/home" class="logo-link">
         <img src="logo.png" id="img" alt="Logo" />
       </a>
-      <span id="text2"><%= companyName %> - <%= departmentName %> Department Workers</span>
+      <span id="text2">
+        <%= companyName %> - <%= departmentName %> Department Workers
+      </span>
       <li id="home"><a href="/home">Home</a></li>
       <li id="companies"><a href="/companies">Companies</a></li>
       <div id="profile" class="dropdown">
@@ -31,23 +37,28 @@
     <ul>
       <% users.forEach(function(user) { %>
         <div class="dropdown">
-          <button class="dropbtn"><%= user.firstName %> <%= user.lastName %></button>
+          <button class="dropbtn">
+            <%= user.firstName %>
+              <%= user.lastName %>
+          </button>
           <div class="dropdown-content">
-            <span>Email:<%= user.email %> </a><span>
-            Profile Link:<a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a></span>
-            University: <%= user.education.institution %></span>
-            Faculty: <%= user.education.faculty %></span>
-            Status:<%= user.education.status === 'student' ? 'Student' : 'Alumni' %></span>
-            Mentor Interest:<%= user.mentorInterest ? 'Yes' : 'No' %></span>
-            Company:<%= user.currentJob.company %></a></span>
-            Position:</strong> <%= user.currentJob.position %> </span>
+            <div>Email:<a href="<%= user.email %>" target="_blank"> target="_blank"></a> </div>
+            <div>Profile Link:<a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a></div>
+            <div> University: <%= user.education.institution %></div>
+            <div>Faculty: <%= user.education.faculty %></div>
+              Status:<%= user.education.status==='student' ? 'Student' : 'Alumni' %></span>
+                Mentor Interest:<%= user.mentorInterest ? 'Yes' : 'No' %></span>
+                  Company:<%= user.currentJob.company %></a></span>
+                    Position:</strong>
+                    <%= user.currentJob.position %> </span>
           </div>
         </div>
-      <% }); %>
+        <% }); %>
     </ul>
   </main>
   <footer>
     <p id="copy">&copy; 2024 Career Cliquee</p>
   </footer>
 </body>
+
 </html>

@@ -6,7 +6,7 @@
     "internships": "LC Waikiki, her yıl yaz dönemi için staj programları düzenlemektedir. Başvurular genellikle Mart-Nisan aylarında başlar.",
     "careerTips": "LC Waikiki'de kariyer yapmak için moda trendlerini takip etmek, müşteri odaklı olmak ve iyi bir iletişim becerisi geliştirmek önemlidir.",
     "learningResources": "LC Waikiki, çalışanlarına moda ve perakende sektörü ile ilgili eğitimler ve seminerler sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Huawei",
@@ -24,7 +24,7 @@
     "internships": "Türk Telekom, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve telekomünikasyon mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Türk Telekom'da kariyer yapmak için teknik becerilerinizi geliştirmeniz, müşteri odaklı olmanız ve iyi bir iletişim becerisi geliştirmeniz önemlidir.",
     "learningResources": "Türk Telekom, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {    
     "name": "Vestel",
@@ -33,7 +33,7 @@
     "internships": "Vestel, her yıl makine mühendisliği, elektrik-elektronik mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Vestel'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "Vestel, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "ETS",
@@ -42,7 +42,7 @@
     "internships": "ETS, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "ETS'de kariyer yapmak için yazılım geliştirme becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "ETS, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Migros",
@@ -51,7 +51,7 @@
     "internships": "Migros, her yıl işletme, pazarlama ve lojistik alanlarında staj programları düzenlemektedir.",
     "careerTips": "Migros'ta kariyer yapmak için müşteri odaklı olmak, iyi bir iletişim becerisi geliştirmek ve takım çalışmasına yatkın olmak önemlidir.",
     "learningResources": "Migros, çalışanlarına perakende sektörü, müşteri ilişkileri ve liderlik konularında eğitimler ve seminerler sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Sabancı",
@@ -60,7 +60,7 @@
     "internships": "Sabancı Holding, her yıl birçok farklı sektörde staj programları düzenlemektedir.",
     "careerTips": "Sabancı Holding'de kariyer yapmak için sektöre özel becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "Sabancı Holding, çalışanlarına sektöre özel eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Zorlu",
@@ -69,7 +69,7 @@
     "internships": "Zorlu Holding, her yıl enerji mühendisliği, tekstil mühendisliği ve inşaat mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Zorlu Holding'de kariyer yapmak için sektöre özel becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "Zorlu Holding, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Logo",
@@ -78,7 +78,7 @@
     "internships": "Logo Yazılım, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Logo Yazılım'da kariyer yapmak için yazılım geliştirme becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "Logo Yazılım, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Turkcell",
@@ -87,7 +87,7 @@
     "internships": "Turkcell, her yıl yazılım mühendisliği, bilgisayar mühendisliği ve telekomünikasyon mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Turkcell'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, müşteri odaklı olmanız ve iyi bir iletişim becerisi geliştirmeniz önemlidir.",
     "learningResources": "Turkcell, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "LC Waikiki",
@@ -96,7 +96,7 @@
     "internships": "LC Waikiki, her yıl yaz dönemi için staj programları düzenlemektedir. Başvurular genellikle Mart-Nisan aylarında başlar.",
     "careerTips": "LC Waikiki'de kariyer yapmak için moda trendlerini takip etmek, müşteri odaklı olmak ve iyi bir iletişim becerisi geliştirmek önemlidir.",
     "learningResources": "LC Waikiki, çalışanlarına moda ve perakende sektörü ile ilgili eğitimler ve seminerler sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Migros",
@@ -105,7 +105,7 @@
     "internships": "Migros, her yıl işletme, pazarlama ve lojistik alanlarında staj programları düzenlemektedir.",
     "careerTips": "Migros'ta kariyer yapmak için müşteri odaklı olmak, iyi bir iletişim becerisi geliştirmek ve takım çalışmasına yatkın olmak önemlidir.",
     "learningResources": "Migros, çalışanlarına perakende sektörü, müşteri ilişkileri ve liderlik konularında eğitimler ve seminerler sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Tchibo",
@@ -114,7 +114,7 @@
     "internships": "Tchibo, her yıl pazarlama, işletme ve lojistik alanlarında staj programları düzenlemektedir.",
     "careerTips": "Tchibo'da kariyer yapmak için müşteri odaklı olmak, yenilikçi düşünmek ve iyi bir iletişim becerisi geliştirmek önemlidir.",
     "learningResources": "Tchibo, çalışanlarına perakende sektörü, müşteri ilişkileri ve yönetim konularında eğitimler ve seminerler sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   },
   {
     "name": "Mercedes-Benz",
@@ -123,6 +123,6 @@
     "internships": "Mercedes-Benz, her yıl makine mühendisliği, otomotiv mühendisliği ve endüstri mühendisliği alanlarında staj programları düzenlemektedir.",
     "careerTips": "Mercedes-Benz'de kariyer yapmak için teknik becerilerinizi geliştirmeniz, yenilikçi düşünmeniz ve takım çalışmasına yatkın olmanız önemlidir.",
     "learningResources": "Mercedes-Benz, çalışanlarına teknik eğitimler, sertifika programları ve mentorluk olanakları sunmaktadır.",
-    "departments": ["Sales", "Marketing", "Design", "HR"]
+    "departments": ["Sales", "Marketing", "Design", "HR","Software"]
   }
 ]
