@@ -33,21 +33,21 @@
         <div class="dropdown">
           <button class="dropbtn"><%= user.firstName %> <%= user.lastName %></button>
           <div class="dropdown-content">
-            <span>Email:<%= user.email %> </a><span>
-            Profile Link:<a href="<%= user.profileLink %>" target="_blank"><%= user.profileLink %></a></span>
-            University: <%= user.education.institution %></span>
-            Faculty: <%= user.education.faculty %></span>
-            Status:<%= user.education.status === 'student' ? 'Student' : 'Alumni' %></span>
-            Mentor Interest:<%= user.mentorInterest ? 'Yes' : 'No' %></span>
-            Company:<%= user.currentJob.company %></a></span>
-            Position:</strong> <%= user.currentJob.position %> </span>
-          </div>
+            <a href="mailto:<%= user.email %>" target="_blank">Email: <%= user.email %></a>
+            <a href="<%= user.profileLink %>" target="_blank">Profile Link: <%= user.profileLink %></a>
+            <a href="#">University: <%= user.education.institution %></a>
+            <a href="#"> <%= user.education.faculty %></a>
+            <a href="#">Status: <%= user.education.status === 'student' ? 'Student' : 'Alumni' %></a>
+            <a href="#">Mentor Interest: <%= user.mentorInterest ? 'Yes' : 'No' %></a>
+            <a href="#">Company: <%= user.currentJob.company %></a>
+            <a href="#">Position: <%= user.currentJob.position %></a>
+        </div> 
         </div>
       <% }); %>
     </ul>
   </main>
   <footer>
-    <p id="copy">&copy; 2024 Career Cliquee</p>
+    <p id="copy">&copy; 2024 KariyerYa</p>
   </footer>
 </body>
 </html>

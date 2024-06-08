@@ -43,7 +43,7 @@ img {
 #text2{
     margin-top: 80px; 
     position: absolute;
-    left: calc(50% - 300px); /* Sayfanın yarısında olacak şekilde sola kaydır */
+    left: calc(50% - 200px); /* Sayfanın yarısında olacak şekilde sola kaydır */
     transform: translateX(-50%);
     top: 70px; /* Üstten boşluk bırak */
     color: grey;
@@ -185,6 +185,7 @@ img {
 .dropdown {
   position: relative;
   display: inline-block;
+  top: 60px; 
 }
 #logout-formb {
     background-color: #6fc0ed;
