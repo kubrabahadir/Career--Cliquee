@@ -62,11 +62,19 @@
       </div>
       <div>
         <label for="currentJobCompany" style="color: #363739;  font-weight: bold;">Current Job Company:</label>
-        <input type="text" id="currentJobCompany" name="currentJobCompany" value="<%= user.currentJob.company %>">
+        <select id="currentJobCompany" name="currentJobCompany">
+          <% companies.forEach(company => { %>
+            <option value="<%= company.name %>" <%= company.name === user.currentJob.company ? 'selected' : '' %>><%= company.name %></option>
+          <% }); %>
+        </select>
       </div>
       <div>
         <label for="currentJobPosition" style="color: #363739;  font-weight: bold;">Current Job Position:</label>
-        <input type="text" id="currentJobPosition" name="currentJobPosition" value="<%= user.currentJob.position %>">
+        <select id="currentJobPosition" name="currentJobPosition">
+          <% departments.forEach(department => { %>
+            <option value="<%= department %>" <%= department === user.currentJob.position ? 'selected' : '' %>><%= department %></option>
+          <% }); %>
+        </select>
       </div>
       <button type="submit">Update Profile</button>
     </form>

@@ -84,13 +84,13 @@ app.get('/updateprofile', isAuthenticated, async (req, res) => {
     if (!user) {
       return res.status(404).send('User not found');
     }
-
     const universities = require('./universities.json');
     const userUniversity = universities.find(u => u.name === user.education.institution);
     const userFaculties = [...(userUniversity?.faculty || []), user.education.faculty].filter(Boolean);
+    const companies = require('./companies.json');
+    const departments = companies.flatMap(company => company.departments);
     const userName = `${user.firstName} ${user.lastName}`;
-
-    res.render('updateprofile', { user, userName, universities, userFaculties });
+    res.render('updateprofile', { user, userName, universities, userFaculties, companies, departments });
   } catch (err) {
     console.error('Error fetching user profile for update:', err);
     res.status(500).send('Server error');
