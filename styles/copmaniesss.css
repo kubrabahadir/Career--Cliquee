@@ -238,3 +238,15 @@ img {
     margin-top: 200px; 
 }
 
+.job-listening {
+    margin-top: 200px; /* Sayfanın üstünden 70px aşağıda olacak şekilde yerleştir */
+  }
+
+.job-card {
+    border: 1px solid #ccc; /* Kartın kenarlarını belirginleştir */
+    border-radius: 8px; /* Kartın köşelerini yuvarla */
+    padding: 20px; /* Kart içeriğine boşluk ekle */
+    margin-bottom: 20px; /* Her kart arasına boşluk bırak */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kartın hafif bir gölgesi olsun */
+    text-align: center; /* İçeriği ortala */
+  }

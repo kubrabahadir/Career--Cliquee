@@ -16,7 +16,7 @@
       <li id="home"><a href="/home">Home</a></li>
       <li id="companies"><a href="/companies">Companies</a></li>
       <div id="profile" class="dropdown">
-        <button class="dropbtn">Settings</button>
+        <button class="dropbtn"><%= userName %></button>
         <div class="dropdown-content">
           <a href="/profile">Profile</a>
           <form id="logout-form" action="/logout" method="post" style="display: inline;">
@@ -49,5 +49,6 @@
   <footer>
     <p id="copy">&copy; 2024 KariyerYa</p>
   </footer>
+  <script src="js/home.js"></script>
 </body>
 </html>

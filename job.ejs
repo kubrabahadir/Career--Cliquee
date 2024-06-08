@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Listings</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Posting</title>
+  <link rel="stylesheet" href="styles/copmaniesss.css" />
+  <link rel="shourt icon" type="image/png" href="logo.png"/>
 </head>
 <body>
-  <h1>Job Listings</h1>
-  <ul>
-    <% jobs.forEach(job => { %>
-      <li>
-        <h2><%= job.title %></h2>
-        <p><strong>Company:</strong> <%= job.company %></p>
-        <p><strong>Location:</strong> <%= job.location %></p>
-        <p><strong>Description:</strong> <%= job.description %></p>
-      </li>
-    <% }) %>
-  </ul>
+  <nav>
+    <ul id="navbar">
+      <a href="/home" class="logo-link">
+        <img src="logo.png" id="img" alt="Logo" />
+      </a>
+      <a href="/home" id="text">
+        KariyerYa
+      </a>
+      <li id="home"><a href="/home">Home</a></li>
+      <div id="profile" class="dropdown">
+        <button class="dropbtn"><%= userName %></button>
+        <div class="dropdown-content">
+          <a href="/profile">Profile</a>
+          <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button id="logout-formb" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </ul>
+  </nav>
+
+  <div class="job-listening">
+      <% jobs.forEach(function(job) { %>
+          <div class="job-card">
+              <h2><%= job.Title %></h2>
+              <p><strong>Company:</strong> <%= job.Company %></p>
+              <p><strong>Work Model:</strong> <%= job["Work Model"] %></p>
+              <p><strong>Location:</strong> <%= job.Location %></p>
+              <p><a href="<%= job["Job Link"] %>">Job Link</a></p>
+          </div>
+      <% }); %>
+    </div>
+  <script src="js/home.js"></script>
 </body>
 </html>

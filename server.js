@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const { exec } = require('child_process');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -44,6 +45,23 @@ function isAuthenticated(req, res, next) {
    res.redirect('/');
  }
 }
+
+const jsonData = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+
+// Route to display job listings
+app.get('/job', async (req, res) => {
+  try {
+    const user = await User.findById(req.session.userId);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    const userName = `${user.firstName} ${user.lastName}`;
+    res.render('job', { jobs: jsonData, userName: userName });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 // Profile route
 app.get('/profile', isAuthenticated, async (req, res) => {
@@ -276,6 +294,11 @@ app.post('/forgot-password', async (req, res) => {
 app.get('/department', isAuthenticated, async (req, res) => {
   const companyName = req.query.company;
   const deptName = req.query.dept;
+  const user = await User.findById(req.session.userId);
+  if (!user) {
+    return res.status(404).send('User not found');
+  }
+  const userName = `${user.firstName} ${user.lastName}`;
 
   try {
     const companies = require('./companies.json');
@@ -285,9 +308,9 @@ app.get('/department', isAuthenticated, async (req, res) => {
       const users = await User.find({ 'currentJob.company': companyName, 'currentJob.position': deptName });
 
       if (users.length > 0) {
-        res.render('department', { companyName: company.name, departmentName: deptName, users });
+        res.render('department', { companyName: company.name, departmentName: deptName, users,userName: userName });
       } else {
-        res.render('department', { companyName: company.name, departmentName: deptName, users: [], message: 'No users found in this department.' });
+        res.render('department', { userName: userName, companyName: company.name, departmentName: deptName, users: [], message: 'No users found in this department.' });
       }
     } else {
       res.status(404).send('Company not found');
@@ -301,6 +324,11 @@ app.get('/department', isAuthenticated, async (req, res) => {
 app.get('/faculty', isAuthenticated, async (req, res) => {
   const universityName = req.query.university;
   const facultyName = req.query.faculty;
+  const user = await User.findById(req.session.userId);
+  if (!user) {
+    return res.status(404).send('User not found');
+  }
+  const userName = `${user.firstName} ${user.lastName}`;
 
   try {
     const universities = require('./universities.json');
@@ -309,9 +337,9 @@ app.get('/faculty', isAuthenticated, async (req, res) => {
     if (university){
       const users = await User.find({'education.institution':universityName,'education.faculty':facultyName});
       if (users.length > 0) {
-        res.render('faculty', { universityName: university.name, facultyName: facultyName, users });
+        res.render('faculty', { universityName: university.name, facultyName: facultyName, users, userName: userName });
       } else {
-        res.render('faculty', { universityName: university.name, facultyName: facultyName, users: [], message: 'No users found in this faculty.' });
+        res.render('faculty', { userName: userName,universityName: university.name, facultyName: facultyName, users: [], message: 'No users found in this faculty.' });
       }
     }
     else{
