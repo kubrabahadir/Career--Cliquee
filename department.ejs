@@ -43,7 +43,7 @@
           </button>
           <div class="dropdown-content">
             <a href="mailto:<%= user.email %>" target="_blank">Email: <%= user.email %></a>
-            <a href="<%= user.profileLink %>" target="_blank">Profile Link: <%= user.profileLink %></a>
+            <a href="<%= user.profileLink %>" target="_blank">LinkedIn: <%= user.profileLink %></a>
             <a href="#">University: <%= user.education.institution %></a>
             <a href="#"> <%= user.education.faculty %></a>
             <a href="#">Status: <%= user.education.status === 'student' ? 'Student' : 'Alumni' %></a>
