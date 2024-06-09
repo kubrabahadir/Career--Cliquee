@@ -84,13 +84,17 @@ app.get('/updateprofile', isAuthenticated, async (req, res) => {
     if (!user) {
       return res.status(404).send('User not found');
     }
+
     const universities = require('./universities.json');
     const userUniversity = universities.find(u => u.name === user.education.institution);
     const userFaculties = [...(userUniversity?.faculty || []), user.education.faculty].filter(Boolean);
+
     const companies = require('./companies.json');
-    const departments = companies.flatMap(company => company.departments);
+    const userCompany = companies.find(c => c.name === user.currentJob.company);
+    const userDepartments = [...(userCompany?.departments || []), user.currentJob.position].filter(Boolean);
+
     const userName = `${user.firstName} ${user.lastName}`;
-    res.render('updateprofile', { user, userName, universities, userFaculties, companies, departments });
+    res.render('updateprofile', { user, userName, universities, userFaculties, companies, userDepartments });
   } catch (err) {
     console.error('Error fetching user profile for update:', err);
     res.status(500).send('Server error');
@@ -109,7 +113,8 @@ app.post('/updateprofile', isAuthenticated, async (req, res) => {
     user.currentJob.position = currentJobPosition;
     user.profileLink = profileLink;
     user.mentorInterest = mentorInterest === 'on';
-
+    
+    
     await user.save();
     res.redirect('/profile');
   } catch (err) {
@@ -413,4 +418,3 @@ app.listen(port, () => {
     console.log(stdout);
   });
 });
-

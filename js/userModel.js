@@ -54,3 +54,4 @@ userSchema.methods.generateResetToken = function() {
 };
 
 module.exports = mongoose.model('User', userSchema);
+

@@ -20,65 +20,64 @@
       </form>
     </div>
   </div>
-    <form  class="form-field" action="/updateprofile" method="POST">
-      <div>
-        <label  for="firstName" style="color: #363739;  font-weight: bold;">First Name:</label>
-        <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
-      </div>
-      <div>
-        <label for="lastName" style="color: #363739; font-weight: bold;">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
-      </div>
-      <div>
-        <label for="institution" style="color: #363739;  font-weight: bold;">University:</label>
-        <select id="institution" name="institution">
-          <% universities.forEach(university => { %>
-            <option value="<%= university.name %>" <%= university.name === user.education.institution ? 'selected' : '' %>><%= university.name %></option>
-          <% }); %>
-        </select>
-      </div>
-      <div>
-        <label for="faculty" style="color: #363739;  font-weight: bold;">Faculty:</label>
-        <select id="faculty" name="faculty">
-          <% userFaculties.forEach(faculty => { %>
-            <option value="<%= faculty %>" <%= faculty === user.education.faculty ? 'selected' : '' %>><%= faculty %></option>
-          <% }); %>
-        </select>
-      </div>
-      <div>
-        <label for="status" style="color: #363739;  font-weight: bold;">Field of Study:</label>
-        <select id="status" name="status">
-          <option value="student" <%= user.education.status === 'student' ? 'selected' : '' %>>Student</option>
-          <option value="alumni" <%= user.education.status === 'alumni' ? 'selected' : '' %>>Alumni</option>
-        </select>
-      </div>
-      <div>
-        <label for="profileLink" style="color: #363739;  font-weight: bold;">LinkedIn :</label>
-        <input type="url" id="profileLink" name="profileLink" value="<%= user.profileLink %>">
-      </div>
-      <div>
-        <label for="mentorInterest" style="color: #363739;  font-weight: bold;">Interested in Becoming a Mentor?</label>
-        <input type="checkbox" id="mentorInterest" name="mentorInterest" <%= user.mentorInterest ? 'checked' : '' %>>
-      </div>
-      <div>
-        <label for="currentJobCompany" style="color: #363739;  font-weight: bold;">Current Job Company:</label>
-        <select id="currentJobCompany" name="currentJobCompany">
-          <% companies.forEach(company => { %>
-            <option value="<%= company.name %>" <%= company.name === user.currentJob.company ? 'selected' : '' %>><%= company.name %></option>
-          <% }); %>
-        </select>
-      </div>
-      <div>
-        <label for="currentJobPosition" style="color: #363739;  font-weight: bold;">Current Job Position:</label>
-        <select id="currentJobPosition" name="currentJobPosition">
-          <% departments.forEach(department => { %>
-            <option value="<%= department %>" <%= department === user.currentJob.position ? 'selected' : '' %>><%= department %></option>
-          <% }); %>
-        </select>
-      </div>
-      <button type="submit">Update Profile</button>
-    </form>
-  </div>
+  <form class="form-field" action="/updateprofile" method="POST">
+    <div>
+      <label for="firstName" style="color: #363739; font-weight: bold;">First Name:</label>
+      <input type="text" id="firstName" name="firstName" value="<%= user.firstName %>">
+    </div>
+    <div>
+      <label for="lastName" style="color: #363739; font-weight: bold;">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>">
+    </div>
+    <div>
+      <label for="institution" style="color: #363739; font-weight: bold;">University:</label>
+      <select id="institution" name="institution">
+        <% universities.forEach(university => { %>
+          <option value="<%= university.name %>" <%= university.name === user.education.institution ? 'selected' : '' %>><%= university.name %></option>
+        <% }); %>
+      </select>
+    </div>
+    <div>
+      <label for="faculty" style="color: #363739; font-weight: bold;">Faculty:</label>
+      <select id="faculty" name="faculty">
+        <% userFaculties.forEach(faculty => { %>
+          <option value="<%= faculty %>" <%= faculty === user.education.faculty ? 'selected' : '' %>><%= faculty %></option>
+        <% }); %>
+      </select>
+    </div>
+    <div>
+      <label for="status" style="color: #363739; font-weight: bold;">Field of Study:</label>
+      <select id="status" name="status">
+        <option value="student" <%= user.education.status === 'student' ? 'selected' : '' %>>Student</option>
+        <option value="alumni" <%= user.education.status === 'alumni' ? 'selected' : '' %>>Alumni</option>
+      </select>
+    </div>
+    <div>
+      <label for="profileLink" style="color: #363739; font-weight: bold;">LinkedIn:</label>
+      <input type="url" id="profileLink" name="profileLink" value="<%= user.profileLink %>">
+    </div>
+    <div>
+      <label for="mentorInterest" style="color: #363739; font-weight: bold;">Interested in Becoming a Mentor?</label>
+      <input type="checkbox" id="mentorInterest" name="mentorInterest" <%= user.mentorInterest ? 'checked' : '' %>>
+    </div>
+    <div>
+      <label for="currentJobCompany" style="color: #363739; font-weight: bold;">Current Job Company:</label>
+      <select id="currentJobCompany" name="currentJobCompany">
+        <% companies.forEach(company => { %>
+          <option value="<%= company.name %>" <%= company.name === user.currentJob.company ? 'selected' : '' %>><%= company.name %></option>
+        <% }); %>
+      </select>
+    </div>
+    <div>
+      <label for="currentJobPosition" style="color: #363739; font-weight: bold;">Current Job Position:</label>
+      <select id="currentJobPosition" name="currentJobPosition">
+        <% userDepartments.forEach(department => { %>
+          <option value="<%= department %>" <%= department === user.currentJob.position ? 'selected' : '' %>><%= department %></option>
+        <% }); %>
+      </select>
+    </div>
+    <button class="pofile" type="submit">Update Profile</button>
+  </form>
   <script src="js/updateProfile.js"></script>
   <script src="js/home.js"></script>
 </body>
