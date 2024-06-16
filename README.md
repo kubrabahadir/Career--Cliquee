@@ -4,5 +4,8 @@ The aim of this project is to provide a career field for users who want to estab
 
 # Installation of the Project
 
-```node server.js
+```bash
+  git clone
 
+```javascript
+   node server.js
