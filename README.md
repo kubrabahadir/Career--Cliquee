@@ -6,3 +6,11 @@ The aim of this project is to provide a career field for users who want to estab
 
 ```bash
 node server.js
+
+![resim](https://github.com/kubrabahadir/KariyerYa/assets/84035740/7a15df58-4409-4dd9-8d01-1b37d867f327)
+![resim](https://github.com/kubrabahadir/KariyerYa/assets/84035740/2b813cb7-3f77-44a4-91b9-b7b0a6eead11)
+![resim](https://github.com/kubrabahadir/KariyerYa/assets/84035740/e6f3454e-1662-4d8f-825f-c98fc7049c2d)
+![resim](https://github.com/kubrabahadir/KariyerYa/assets/84035740/f4bacaa7-c526-4500-beee-930ee9c60214)
+![resim](https://github.com/kubrabahadir/KariyerYa/assets/84035740/9fe7eb4e-86f5-4731-ad5d-233e3f6f8f27)
+
+
