@@ -5,7 +5,4 @@ The aim of this project is to provide a career field for users who want to estab
 # Installation of the Project
 
 ```bash
-  git clone https://github.com/kubrabahadir/KariyerYa.git
-
-```bash
    node server.js
